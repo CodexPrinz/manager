@@ -1,0 +1,11 @@
+/workspace/manager/src/main/java/com/project/manager/repository/ServiziAggiuntiviRepository.java
+/workspace/manager/src/main/java/com/project/manager/service/ServiziAggiuntiviService.java
+/workspace/manager/src/main/java/com/project/manager/service/AnagraficaService.java
+/workspace/manager/src/main/java/com/project/manager/entity/Anagrafica.java
+/workspace/manager/src/main/java/com/project/manager/constants/UnitConstants.java
+/workspace/manager/src/main/java/com/project/manager/repository/AnagraficaRepository.java
+/workspace/manager/src/main/java/com/project/manager/service/OffertaService.java
+/workspace/manager/src/main/java/com/project/manager/entity/ServiziAggiuntivi.java
+/workspace/manager/src/main/java/com/project/manager/repository/OffertaRepository.java
+/workspace/manager/src/main/java/com/project/manager/entity/Offerta.java
+/workspace/manager/src/main/java/com/project/manager/ManagerApplication.java
