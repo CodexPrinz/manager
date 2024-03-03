@@ -1,6 +1,7 @@
 package com.project.manager.entity;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,6 +13,12 @@ public class OffertaSolido implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
+    @Column(name = "ID_ANAGRAFICA")
+    private Long idAnag;
+    @Column(name = "CODICE_FISCALE")
+    private String codiceFiscale;
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
     @Column(name = "CODICE_EER_CER")
     private String codiceEER;
     @Column(name = "DESCRIZIONE_RIFIUTI")
@@ -33,6 +40,7 @@ public class OffertaSolido implements Serializable {
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
+    @CreatedDate
     private Date dataInserimento;
     
 
@@ -79,17 +87,6 @@ public class OffertaSolido implements Serializable {
         this.condizioniDiPagamento = condizioniDiPagamento;
     }
 
-    @Override
-    public String toString() {
-        return "OffertaSolido [id=" + id + ", codiceEER=" + codiceEER + ", descrizioneRifiuto=" + descrizioneRifiuto
-                + ", extraSostaDopoLaPrimaOraDiCarico=" + extraSostaDopoLaPrimaOraDiCarico
-                + ", quotaMinimaFatturabileFormulario=" + quotaMinimaFatturabileFormulario
-                + ", compilazioneGestioneFormulario=" + compilazioneGestioneFormulario + ", validitaOfferta="
-                + validitaOfferta + ", condizioniDiPagamento=" + condizioniDiPagamento + ", analisiDiOmologa="
-                + analisiDiOmologa + ", dataFirma=" + dataFirma + ", firmaDigitale=" + firmaDigitale
-                + ", dataInserimento=" + dataInserimento + "]";
-    }
-
     public String getAnalisiDiOmologa() {
         return analisiDiOmologa;
     }
@@ -116,6 +113,75 @@ public class OffertaSolido implements Serializable {
 
     public Date getDataInserimento() {
         return dataInserimento;
+    }
+
+    @Override
+    public String toString() {
+        return "OffertaSolido{" +
+                "id=" + id +
+                ", id_anag=" + idAnag +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
+                ", codiceEER='" + codiceEER + '\'' +
+                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", extraSostaDopoLaPrimaOraDiCarico='" + extraSostaDopoLaPrimaOraDiCarico + '\'' +
+                ", quotaMinimaFatturabileFormulario='" + quotaMinimaFatturabileFormulario + '\'' +
+                ", compilazioneGestioneFormulario='" + compilazioneGestioneFormulario + '\'' +
+                ", validitaOfferta=" + validitaOfferta +
+                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
+                ", analisiDiOmologa='" + analisiDiOmologa + '\'' +
+                ", dataFirma=" + dataFirma +
+                ", firmaDigitale='" + firmaDigitale + '\'' +
+                ", dataInserimento=" + dataInserimento +
+                '}';
+    }
+
+    public Long getIdAnag() {
+        return idAnag;
+    }
+
+    public void setIdAnag(Long idAnag) {
+        this.idAnag = idAnag;
+    }
+
+    public String getCodiceFiscale() {
+        return codiceFiscale;
+    }
+
+    public void setCodiceFiscale(String codiceFiscale) {
+        this.codiceFiscale = codiceFiscale;
+    }
+
+    public String getPartitaIva() {
+        return partitaIva;
+    }
+
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
+    }
+
+    public String getExtraSostaDopoLaPrimaOraDiCarico() {
+        return extraSostaDopoLaPrimaOraDiCarico;
+    }
+
+    public void setExtraSostaDopoLaPrimaOraDiCarico(String extraSostaDopoLaPrimaOraDiCarico) {
+        this.extraSostaDopoLaPrimaOraDiCarico = extraSostaDopoLaPrimaOraDiCarico;
+    }
+
+    public String getQuotaMinimaFatturabileFormulario() {
+        return quotaMinimaFatturabileFormulario;
+    }
+
+    public void setQuotaMinimaFatturabileFormulario(String quotaMinimaFatturabileFormulario) {
+        this.quotaMinimaFatturabileFormulario = quotaMinimaFatturabileFormulario;
+    }
+
+    public String getCompilazioneGestioneFormulario() {
+        return compilazioneGestioneFormulario;
+    }
+
+    public void setCompilazioneGestioneFormulario(String compilazioneGestioneFormulario) {
+        this.compilazioneGestioneFormulario = compilazioneGestioneFormulario;
     }
 
     public void setDataInserimento(Date dataInserimento) {

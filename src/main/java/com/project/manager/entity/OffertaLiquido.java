@@ -1,8 +1,10 @@
 package com.project.manager.entity;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,6 +14,12 @@ public class OffertaLiquido implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
+    @Column(name = "ID_ANAGRAFICA")
+    private Long idAnag;
+    @Column(name = "CODICE_FISCALE")
+    private String codiceFiscale;
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
     @Column(name = "CODICE_EER_CER")
     private String codiceEER;
     @Column(name = "DESCRIZIONE_RIFIUTI")
@@ -44,7 +52,8 @@ public class OffertaLiquido implements Serializable {
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
-    private Date dataInserimento;
+    @CreatedDate
+    private LocalDate dataInserimento;
 
     public OffertaLiquido() {
     }
@@ -69,6 +78,32 @@ public class OffertaLiquido implements Serializable {
         return descrizioneRifiuto;
     }
 
+    @Override
+    public String toString() {
+        return "OffertaLiquido{" +
+                "id=" + id +
+                ", id_anag=" + idAnag +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
+                ", codiceEER='" + codiceEER + '\'' +
+                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", trasportoConMotriceCisterna='" + trasportoConMotriceCisterna + '\'' +
+                ", trasportoConAutotrenoBilico='" + trasportoConAutotrenoBilico + '\'' +
+                ", extraSostaDopoLaPrimaOraDiCarico='" + extraSostaDopoLaPrimaOraDiCarico + '\'' +
+                ", utilizzoCanalJet='" + utilizzoCanalJet + '\'' +
+                ", impiegoSecondoOperatore='" + impiegoSecondoOperatore + '\'' +
+                ", quotaMinimaFatturabile='" + quotaMinimaFatturabile + '\'' +
+                ", compilazioneGestioneFormulario='" + compilazioneGestioneFormulario + '\'' +
+                ", analisiDiOmologo='" + analisiDiOmologo + '\'' +
+                ", validitaOfferta=" + validitaOfferta +
+                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
+                ", analisiDiOmologa='" + analisiDiOmologa + '\'' +
+                ", dataFirma=" + dataFirma +
+                ", firmaDigitale='" + firmaDigitale + '\'' +
+                ", dataInserimento=" + dataInserimento +
+                '}';
+    }
+
     public void setDescrizioneRifiuto(String descrizioneRifiuto) {
         this.descrizioneRifiuto = descrizioneRifiuto;
     }
@@ -87,19 +122,6 @@ public class OffertaLiquido implements Serializable {
 
     public void setCondizioniDiPagamento(String condizioniDiPagamento) {
         this.condizioniDiPagamento = condizioniDiPagamento;
-    }
-
-    @Override
-    public String toString() {
-        return "OffertaLiquido [id=" + id + ", codiceEER=" + codiceEER + ", descrizioneRifiuto=" + descrizioneRifiuto
-                + ", trasportoConMotriceCisterna=" + trasportoConMotriceCisterna + ", trasportoConAutotrenoBilico="
-                + trasportoConAutotrenoBilico + ", extraSostaDopoLaPrimaOraDiCarico=" + extraSostaDopoLaPrimaOraDiCarico
-                + ", utilizzoCanalJet=" + utilizzoCanalJet + ", impiegoSecondoOperatore=" + impiegoSecondoOperatore
-                + ", quotaMinimaFatturabile=" + quotaMinimaFatturabile + ", compilazioneGestioneFormulario="
-                + compilazioneGestioneFormulario + ", analisiDiOmologo=" + analisiDiOmologo + ", validitaOfferta="
-                + validitaOfferta + ", condizioniDiPagamento=" + condizioniDiPagamento + ", analisiDiOmologa="
-                + analisiDiOmologa + ", dataFirma=" + dataFirma + ", firmaDigitale=" + firmaDigitale
-                + ", dataInserimento=" + dataInserimento + "]";
     }
 
     public String getAnalisiDiOmologa() {
@@ -126,11 +148,11 @@ public class OffertaLiquido implements Serializable {
         this.firmaDigitale = firmaDigitale;
     }
 
-    public Date getDataInserimento() {
+    public LocalDate getDataInserimento() {
         return dataInserimento;
     }
 
-    public void setDataInserimento(Date dataInserimento) {
+    public void setDataInserimento(LocalDate dataInserimento) {
         this.dataInserimento = dataInserimento;
     }
 
@@ -197,5 +219,28 @@ public class OffertaLiquido implements Serializable {
     public void setAnalisiDiOmologo(String analisiDiOmologo) {
         this.analisiDiOmologo = analisiDiOmologo;
     }
-    
+
+    public String getCodiceFiscale() {
+        return codiceFiscale;
+    }
+
+    public void setCodiceFiscale(String codiceFiscale) {
+        this.codiceFiscale = codiceFiscale;
+    }
+
+    public Long getIdAnag() {
+        return idAnag;
+    }
+
+    public void setIdAnag(Long idAnag) {
+        this.idAnag = idAnag;
+    }
+
+    public String getPartitaIva() {
+        return partitaIva;
+    }
+
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
+    }
 }

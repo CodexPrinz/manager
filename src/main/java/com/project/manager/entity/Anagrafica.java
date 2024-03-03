@@ -3,17 +3,25 @@ package com.project.manager.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(name = "ANAGRAFICHE")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Anagrafica implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
+    @Column(name = "CODICE_FISCALE")
+    @NotBlank
+    private String codiceFiscale;
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
     @Column(name = "RAGIONE_SOCIALE")
     private String ragioneSociale;
     @Column(name = "SEDE_LEGALE")
@@ -30,11 +38,6 @@ public class Anagrafica implements Serializable {
     @Column(name = "INDIRIZZO_PEC")
     @Email
     private String indirizzoPec;
-    @Column(name = "CODICE_FISCALE")
-    @NotBlank
-    private String codiceFiscale;
-    @Column(name = "PARTITA_IVA")
-    private String partitaIva;
     @Column(name = "CODICE_UNIVOCO")
     @NotBlank
     private String codiceUnivoco;
@@ -50,6 +53,9 @@ public class Anagrafica implements Serializable {
     private Integer abi;
     @Column(name = "CAB")
     private Integer cab;
+    @Column(name = "DATA_INSERIMENTO")
+    @CreatedDate
+    private LocalDate dataInserimento;
 
     public Anagrafica() {
     }
@@ -186,14 +192,14 @@ public class Anagrafica implements Serializable {
     public String toString() {
         return "Anagrafica{" +
                 "id=" + id +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
                 ", ragioneSociale='" + ragioneSociale + '\'' +
                 ", sedeLegale='" + sedeLegale + '\'' +
                 ", telefone=" + telefone +
                 ", perosnaDiRiferimento='" + perosnaDiRiferimento + '\'' +
                 ", email='" + email + '\'' +
                 ", indirizzoPec='" + indirizzoPec + '\'' +
-                ", codiceFiscale='" + codiceFiscale + '\'' +
-                ", partitaIva='" + partitaIva + '\'' +
                 ", codiceUnivoco='" + codiceUnivoco + '\'' +
                 ", codiceAteco='" + codiceAteco + '\'' +
                 ", modalitaDiPagamento='" + modalitaDiPagamento + '\'' +
@@ -201,6 +207,15 @@ public class Anagrafica implements Serializable {
                 ", banca='" + banca + '\'' +
                 ", abi=" + abi +
                 ", cab=" + cab +
+                ", dataInserimento=" + dataInserimento +
                 '}';
+    }
+
+    public LocalDate getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento(LocalDate dataInserimento) {
+        this.dataInserimento = dataInserimento;
     }
 }

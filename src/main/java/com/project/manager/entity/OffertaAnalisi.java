@@ -1,8 +1,10 @@
 package com.project.manager.entity;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,6 +14,12 @@ public class OffertaAnalisi implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
+    @Column(name = "ID_ANAGRAFICA")
+    private Long idAnag;
+    @Column(name = "CODICE_FISCALE")
+    private String codiceFiscale;
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
     @Column(name = "CODICE_EER_CER")
     private String codiceEER;
     @Column(name = "DESCRIZIONE_RIFIUTI")
@@ -27,7 +35,8 @@ public class OffertaAnalisi implements Serializable {
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
-    private Date dataInserimento;
+    @CreatedDate
+    private LocalDate dataInserimento;
 
     public OffertaAnalisi() {
     }
@@ -72,14 +81,6 @@ public class OffertaAnalisi implements Serializable {
         this.condizioniDiPagamento = condizioniDiPagamento;
     }
 
-    @Override
-    public String toString() {
-        return "OffertaAnalisi [id=" + id + ", codiceEER=" + codiceEER + ", descrizioneRifiuto=" + descrizioneRifiuto
-                + ", validitaOfferta=" + validitaOfferta + ", condizioniDiPagamento=" + condizioniDiPagamento
-                + ", analisiDiClassificazione=" + analisiDiClassificazione + ", dataFirma=" + dataFirma
-                + ", firmaDigitale=" + firmaDigitale + ", dataInserimento=" + dataInserimento + "]";
-    }
-
     public Date getDataFirma() {
         return dataFirma;
     }
@@ -98,11 +99,11 @@ public class OffertaAnalisi implements Serializable {
         this.firmaDigitale = firmaDigitale;
     }
 
-    public Date getDataInserimento() {
+    public LocalDate getDataInserimento() {
         return dataInserimento;
     }
 
-    public void setDataInserimento(Date dataInserimento) {
+    public void setDataInserimento(LocalDate dataInserimento) {
         this.dataInserimento = dataInserimento;
     }
 
@@ -112,5 +113,47 @@ public class OffertaAnalisi implements Serializable {
 
     public void setAnalisiDiClassificazione(String analisiDiClassificazione) {
         this.analisiDiClassificazione = analisiDiClassificazione;
+    }
+
+    public String getCodiceFiscale() {
+        return codiceFiscale;
+    }
+
+    public void setCodiceFiscale(String codiceFiscale) {
+        this.codiceFiscale = codiceFiscale;
+    }
+
+    public String getPartitaIva() {
+        return partitaIva;
+    }
+
+    @Override
+    public String toString() {
+        return "OffertaAnalisi{" +
+                "id=" + id +
+                ", idAnag=" + idAnag +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
+                ", codiceEER='" + codiceEER + '\'' +
+                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", validitaOfferta=" + validitaOfferta +
+                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
+                ", analisiDiClassificazione='" + analisiDiClassificazione + '\'' +
+                ", dataFirma=" + dataFirma +
+                ", firmaDigitale='" + firmaDigitale + '\'' +
+                ", dataInserimento=" + dataInserimento +
+                '}';
+    }
+
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
+    }
+
+    public Long getIdAnag() {
+        return idAnag;
+    }
+
+    public void setIdAnag(Long idAnag) {
+        this.idAnag = idAnag;
     }
 }

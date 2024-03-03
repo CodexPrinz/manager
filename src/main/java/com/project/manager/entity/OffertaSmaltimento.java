@@ -1,6 +1,8 @@
 package com.project.manager.entity;
 
+
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -9,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Table(name = "OFFERTA_SMALTIMENTO")
@@ -19,7 +22,55 @@ public class OffertaSmaltimento implements Serializable {
     @Column(name = "ID")
     private Long id;
     @Column(name = "ID_ANAGRAFICA")
-    private Long id_anag;
+    private Long idAnag;
+    @Column(name = "CODICE_FISCALE")
+    private String codiceFiscale;
+    @Column(name = "DATA_INSERIMENTO")
+    @CreatedDate
+    private LocalDate dataInserimento;
+
+    public String getCodiceFiscale() {
+        return codiceFiscale;
+    }
+
+    public void setCodiceFiscale(String codiceFiscale) {
+        this.codiceFiscale = codiceFiscale;
+    }
+
+    public String getPartitaIva() {
+        return partitaIva;
+    }
+
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
+    }
+
+    @Override
+    public String toString() {
+        return "OffertaSmaltimento{" +
+                "id=" + id +
+                ", id_anag=" + idAnag +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
+                ", codiceEER='" + codiceEER + '\'' +
+                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", smaltimento='" + smaltimento + '\'' +
+                ", trasportoConMotrice='" + trasportoConMotrice + '\'' +
+                ", trasportoConAutotrenoBilico='" + trasportoConAutotrenoBilico + '\'' +
+                ", extraSostaDopoLaPrimaOraDiCarico='" + extraSostaDopoLaPrimaOraDiCarico + '\'' +
+                ", quotaMinimaFatturabileFormulario='" + quotaMinimaFatturabileFormulario + '\'' +
+                ", compilazioneGestioneFormulario='" + compilazioneGestioneFormulario + '\'' +
+                ", analisiDiClassificazione='" + analisiDiClassificazione + '\'' +
+                ", validitaOfferta=" + validitaOfferta +
+                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
+                ", dataFirma=" + dataFirma +
+                ", firmaDigitale='" + firmaDigitale + '\'' +
+                ", dataInserimento=" + dataInserimento +
+                '}';
+    }
+
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
     @Column(name = "CODICE_EER_CER")
     private String codiceEER;
     @Column(name = "DESCRIZIONE_RIFIUTI")
@@ -46,9 +97,7 @@ public class OffertaSmaltimento implements Serializable {
     private Date dataFirma;
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
-    @Column(name = "DATA_INSERIMENTO")
-    private Date dataInserimento;
-    
+
     public Long getId() {
         return id;
     }
@@ -85,10 +134,10 @@ public class OffertaSmaltimento implements Serializable {
     public void setTrasportoConAutotrenoBilico(String trasportoConAutotrenoBilico) {
         this.trasportoConAutotrenoBilico = trasportoConAutotrenoBilico;
     }
-    public Date getDataInserimento() {
+    public LocalDate getDataInserimento() {
         return dataInserimento;
     }
-    public void setDataInserimento(Date dataInserimento) {
+    public void setDataInserimento(LocalDate dataInserimento) {
         this.dataInserimento = dataInserimento;
     }
     public String getExtraSostaDopoLaPrimaOraDiCarico() {
@@ -127,24 +176,12 @@ public class OffertaSmaltimento implements Serializable {
     public void setCondizioniDiPagamento(String condizioniDiPagamento) {
         this.condizioniDiPagamento = condizioniDiPagamento;
     }
-    
-    @Override
-    public String toString() {
-        return "OffertaSmaltimento [id=" + id + ", id_anag=" + id_anag + ", codiceEER=" + codiceEER
-                + ", descrizioneRifiuto=" + descrizioneRifiuto + ", smaltimento=" + smaltimento
-                + ", trasportoConMotrice=" + trasportoConMotrice + ", trasportoConAutotrenoBilico="
-                + trasportoConAutotrenoBilico + ", extraSostaDopoLaPrimaOraDiCarico=" + extraSostaDopoLaPrimaOraDiCarico
-                + ", quotaMinimaFatturabileFormulario=" + quotaMinimaFatturabileFormulario
-                + ", compilazioneGestioneFormulario=" + compilazioneGestioneFormulario + ", analisiDiClassificazione="
-                + analisiDiClassificazione + ", validitaOfferta=" + validitaOfferta + ", condizioniDiPagamento="
-                + condizioniDiPagamento + ", dataFirma=" + dataFirma + ", firmaDigitale=" + firmaDigitale
-                + ", dataInserimento=" + dataInserimento + "]";
+
+    public Long getIdAnag() {
+        return idAnag;
     }
-    public Long getId_anag() {
-        return id_anag;
-    }
-    public void setId_anag(Long id_anag) {
-        this.id_anag = id_anag;
+    public void setIdAnag(Long idAnag) {
+        this.idAnag = idAnag;
     }
     public Date getDataFirma() {
         return dataFirma;

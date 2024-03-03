@@ -1,3 +1,5 @@
 TODO:
 
 - save logs
+- created(inserted date) on date through annotation
+- Anagrafica on delete, associated delete offerte
