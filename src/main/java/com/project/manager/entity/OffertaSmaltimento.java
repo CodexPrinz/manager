@@ -1,17 +1,12 @@
 package com.project.manager.entity;
 
 
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.CreatedDate;
 
 @Entity
 @Table(name = "OFFERTA_SMALTIMENTO")

@@ -2,7 +2,6 @@ package com.project.manager.controller;
 
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.service.AnagraficaService;
-import jakarta.annotation.Nonnull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -30,7 +29,7 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> getAnagricaById(@PathVariable(value = "id") @Nonnull Long id){
+    public ResponseEntity<Anagrafica> getAnagricaById(@PathVariable(value = "id") @NotNull Long id){
         Anagrafica anag = null;
         try {
             anag = anagraficaService.getAnagraficaById(id);
