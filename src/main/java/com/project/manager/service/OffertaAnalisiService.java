@@ -1,5 +1,6 @@
 package com.project.manager.service;
 
+import com.project.manager.entity.Anagrafica;
 import com.project.manager.entity.OffertaAnalisi;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public interface OffertaAnalisiService {
 
     OffertaAnalisi getOffertaAnalisiById(Long id);
-    List<OffertaAnalisi> getOffertaAnalisiByAnagId(Long anagId);
+    List<OffertaAnalisi> getOffertaAnalisiByAnagId(Anagrafica anagId);
 
     List<OffertaAnalisi> getOffertaAnalisiByCF(String cf);
 

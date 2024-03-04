@@ -3,6 +3,7 @@ package com.project.manager.entity;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
@@ -14,8 +15,10 @@ public class OffertaLiquido implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-    @Column(name = "ID_ANAGRAFICA")
-    private Long idAnag;
+    @JoinColumn(name = "ID_ANAGRAFICA")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @NotNull
+    private Anagrafica idAnag;
     @Column(name = "CODICE_FISCALE")
     private String codiceFiscale;
     @Column(name = "PARTITA_IVA")
@@ -228,11 +231,11 @@ public class OffertaLiquido implements Serializable {
         this.codiceFiscale = codiceFiscale;
     }
 
-    public Long getIdAnag() {
+    public Anagrafica getIdAnag() {
         return idAnag;
     }
 
-    public void setIdAnag(Long idAnag) {
+    public void setIdAnag(Anagrafica idAnag) {
         this.idAnag = idAnag;
     }
 

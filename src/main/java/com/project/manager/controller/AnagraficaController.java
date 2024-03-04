@@ -54,7 +54,7 @@ public class AnagraficaController {
         }
     }
 
-    @PostMapping(
+    @PutMapping(
             path = "/update",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE

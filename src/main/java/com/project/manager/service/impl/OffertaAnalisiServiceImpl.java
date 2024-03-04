@@ -1,6 +1,7 @@
 package com.project.manager.service.impl;
 
 import com.project.manager.constants.MessageConst;
+import com.project.manager.entity.Anagrafica;
 import com.project.manager.entity.OffertaAnalisi;
 import com.project.manager.repository.OffertaAnalisiRepository;
 import com.project.manager.service.OffertaAnalisiService;
@@ -23,8 +24,8 @@ public class OffertaAnalisiServiceImpl implements OffertaAnalisiService {
     }
 
     @Override
-    public List<OffertaAnalisi> getOffertaAnalisiByAnagId(Long anagId) {
-        return offertaAnalisiRepository.getOffertaAnalisiByAnagId(anagId);
+    public List<OffertaAnalisi> getOffertaAnalisiByAnagId(Anagrafica anagId) {
+        return offertaAnalisiRepository.getOffertaAnalisiByAnagId(anagId.getId());
     }
 
     @Override

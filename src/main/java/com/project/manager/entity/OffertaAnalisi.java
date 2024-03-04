@@ -3,6 +3,7 @@ package com.project.manager.entity;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
@@ -14,8 +15,11 @@ public class OffertaAnalisi implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-    @Column(name = "ID_ANAGRAFICA")
-    private Long idAnag;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_ANAGRAFICA")
+    @NotNull
+    private Anagrafica idAnag;
     @Column(name = "CODICE_FISCALE")
     private String codiceFiscale;
     @Column(name = "PARTITA_IVA")
@@ -127,6 +131,18 @@ public class OffertaAnalisi implements Serializable {
         return partitaIva;
     }
 
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
+    }
+
+    public Anagrafica getIdAnag() {
+        return idAnag;
+    }
+
+    public void setIdAnag(Anagrafica idAnag) {
+        this.idAnag = idAnag;
+    }
+
     @Override
     public String toString() {
         return "OffertaAnalisi{" +
@@ -143,17 +159,5 @@ public class OffertaAnalisi implements Serializable {
                 ", firmaDigitale='" + firmaDigitale + '\'' +
                 ", dataInserimento=" + dataInserimento +
                 '}';
-    }
-
-    public void setPartitaIva(String partitaIva) {
-        this.partitaIva = partitaIva;
-    }
-
-    public Long getIdAnag() {
-        return idAnag;
-    }
-
-    public void setIdAnag(Long idAnag) {
-        this.idAnag = idAnag;
     }
 }

@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ANAGRAFICHE")
@@ -56,6 +57,18 @@ public class Anagrafica implements Serializable {
     @Column(name = "DATA_INSERIMENTO")
     @CreatedDate
     private LocalDate dataInserimento;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
+    @Column(name = "analisi")
+    private List<OffertaAnalisi> offertaAnalisiList;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
+    @Column(name = "liquido")
+    private List<OffertaLiquido> offertaLiquidoList;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
+    @Column(name = "solido")
+    private List<OffertaSolido> offertaSolidoList;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
+    @Column(name = "smaltimento")
+    private List<OffertaSmaltimento> offertaSmaltimentoList;
 
     public Anagrafica() {
     }
@@ -188,6 +201,26 @@ public class Anagrafica implements Serializable {
         this.cab = cab;
     }
 
+    public LocalDate getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public List<OffertaAnalisi> getOffertaAnalisiList() {
+        return offertaAnalisiList;
+    }
+
+    public void setOffertaAnalisiList(List<OffertaAnalisi> offertaAnalisiList) {
+        this.offertaAnalisiList = offertaAnalisiList;
+    }
+
+    public void setDataInserimento(LocalDate dataInserimento) {
+        this.dataInserimento = dataInserimento;
+    }
+
+    public List<OffertaLiquido> getOffertaLiquidoList() {
+        return offertaLiquidoList;
+    }
+
     @Override
     public String toString() {
         return "Anagrafica{" +
@@ -208,14 +241,30 @@ public class Anagrafica implements Serializable {
                 ", abi=" + abi +
                 ", cab=" + cab +
                 ", dataInserimento=" + dataInserimento +
+                ", offertaAnalisiList=" + offertaAnalisiList +
+                ", offertaLiquidoList=" + offertaLiquidoList +
+                ", offertaSolidoList=" + offertaSolidoList +
+                ", offertaSmaltimentoList=" + offertaSmaltimentoList +
                 '}';
     }
 
-    public LocalDate getDataInserimento() {
-        return dataInserimento;
+    public void setOffertaLiquidoList(List<OffertaLiquido> offertaLiquidoList) {
+        this.offertaLiquidoList = offertaLiquidoList;
     }
 
-    public void setDataInserimento(LocalDate dataInserimento) {
-        this.dataInserimento = dataInserimento;
+    public List<OffertaSolido> getOffertaSolidoList() {
+        return offertaSolidoList;
+    }
+
+    public void setOffertaSolidoList(List<OffertaSolido> offertaSolidoList) {
+        this.offertaSolidoList = offertaSolidoList;
+    }
+
+    public List<OffertaSmaltimento> getOffertaSmaltimentoList() {
+        return offertaSmaltimentoList;
+    }
+
+    public void setOffertaSmaltimentoList(List<OffertaSmaltimento> offertaSmaltimentoList) {
+        this.offertaSmaltimentoList = offertaSmaltimentoList;
     }
 }

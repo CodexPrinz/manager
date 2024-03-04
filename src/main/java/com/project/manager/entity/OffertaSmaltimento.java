@@ -16,8 +16,9 @@ public class OffertaSmaltimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-    @Column(name = "ID_ANAGRAFICA")
-    private Long idAnag;
+    @JoinColumn(name = "ID_ANAGRAFICA")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Anagrafica idAnag;
     @Column(name = "CODICE_FISCALE")
     private String codiceFiscale;
     @Column(name = "DATA_INSERIMENTO")
@@ -172,10 +173,10 @@ public class OffertaSmaltimento implements Serializable {
         this.condizioniDiPagamento = condizioniDiPagamento;
     }
 
-    public Long getIdAnag() {
+    public Anagrafica getIdAnag() {
         return idAnag;
     }
-    public void setIdAnag(Long idAnag) {
+    public void setIdAnag(Anagrafica idAnag) {
         this.idAnag = idAnag;
     }
     public Date getDataFirma() {
