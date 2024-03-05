@@ -24,6 +24,34 @@ public class OffertaSmaltimento implements Serializable {
     @Column(name = "DATA_INSERIMENTO")
     @CreatedDate
     private LocalDate dataInserimento;
+    @Column(name = "PARTITA_IVA")
+    private String partitaIva;
+    @Column(name = "CODICE_EER_CER")
+    private String codiceEER;
+    @Column(name = "DESCRIZIONE_RIFIUTI")
+    private String descrizioneRifiuto;
+    @Column(name = "SMALTIMENTO")
+    private String smaltimento;
+    @Column(name = "TRASPORTO_CON_MOTRICE")
+    private String trasportoConMotrice;
+    @Column(name = "TRASPORTO_CON_AUTOTRENO_BILICO")
+    private String trasportoConAutotrenoBilico;
+    @Column(name = "EXTRA_SOSTA_DOPO_PRIMA_ORA_CARICO")
+    private String extraSostaDopoLaPrimaOraDiCarico;
+    @Column(name = "QUOATA_MINIMA_FATTURABILE_FORMULARIO")
+    private String quotaMinimaFatturabileFormulario;
+    @Column(name = "COMPILAZIONE_GESTIONE_FORMULARIO")
+    private String compilazioneGestioneFormulario;
+    @Column(name = "ANALISI_DI_CLASSIFICAZIONE")
+    private String analisiDiClassificazione;
+    @Column(name = "VALIDITA_OFFERTA")
+    private Date validitaOfferta;
+    @Column(name = "CONDIZIONI_DI_PAGAMENTO")
+    private String condizioniDiPagamento;
+    @Column(name = "DATA_FIRMA")
+    private Date dataFirma;
+    @Column(name = "FIRMA_DIGITALE")
+    private String firmaDigitale;
 
     public String getCodiceFiscale() {
         return codiceFiscale;
@@ -65,34 +93,7 @@ public class OffertaSmaltimento implements Serializable {
                 '}';
     }
 
-    @Column(name = "PARTITA_IVA")
-    private String partitaIva;
-    @Column(name = "CODICE_EER_CER")
-    private String codiceEER;
-    @Column(name = "DESCRIZIONE_RIFIUTI")
-    private String descrizioneRifiuto;
-    @Column(name = "SMALTIMENTO")
-    private String smaltimento;
-    @Column(name = "TRASPORTO_CON_MOTRICE")
-    private String trasportoConMotrice;
-    @Column(name = "TRASPORTO_CON_AUTOTRENO_BILICO")
-    private String trasportoConAutotrenoBilico;
-    @Column(name = "EXTRA_SOSTA_DOPO_PRIMA_ORA_CARICO")
-    private String extraSostaDopoLaPrimaOraDiCarico;
-    @Column(name = "QUOATA_MINIMA_FATTURABILE_FORMULARIO")
-    private String quotaMinimaFatturabileFormulario;
-    @Column(name = "COMPILAZIONE_GESTIONE_FORMULARIO")
-    private String compilazioneGestioneFormulario;
-    @Column(name = "ANALISI_DI_CLASSIFICAZIONE")
-    private String analisiDiClassificazione;
-    @Column(name = "VALIDITA_OFFERTA")
-    private Date validitaOfferta;
-    @Column(name = "CONDIZIONI_DI_PAGAMENTO")
-    private String condizioniDiPagamento;
-    @Column(name = "DATA_FIRMA")
-    private Date dataFirma;
-    @Column(name = "FIRMA_DIGITALE")
-    private String firmaDigitale;
+
 
     public Long getId() {
         return id;
