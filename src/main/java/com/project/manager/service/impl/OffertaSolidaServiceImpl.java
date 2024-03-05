@@ -1,12 +1,15 @@
 package com.project.manager.service.impl;
 
 import com.project.manager.constants.MessageConst;
+import com.project.manager.entity.Anagrafica;
+import com.project.manager.entity.OffertaSmaltimento;
 import com.project.manager.entity.OffertaSolido;
 import com.project.manager.repository.OffertaSolidoRepository;
 import com.project.manager.service.OffertaSolidaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OffertaSolidaServiceImpl implements OffertaSolidaService {
@@ -33,12 +36,37 @@ public class OffertaSolidaServiceImpl implements OffertaSolidaService {
     }
 
     @Override
-    public List<OffertaSolido> getOffertaSolidoByAnagId(Long anagId) {
-        return offertaSolidoRepository.getOffertaAnalisiByAnagId(anagId);
+    public List<OffertaSolido> getOffertaSolidoByAnagId(Anagrafica anag) {
+        return offertaSolidoRepository.getOffertaAnalisiByAnagId(anag.getId());
     }
 
     @Override
     public List<OffertaSolido> getAll() {
         return offertaSolidoRepository.findAll();
+    }
+
+    @Override
+    public void deleteOffertaSolidoById(Long id) {
+        offertaSolidoRepository.deleteById(id);
+    }
+
+    @Override
+    public OffertaSolido createOffertaSolido(OffertaSolido offertaSolido) {
+        if (offertaSolido != null)
+            offertaSolidoRepository.save(offertaSolido);
+
+        return offertaSolido;
+    }
+
+    @Override
+    public OffertaSolido updateOffertaSolido(OffertaSolido newOffertaSolido) {
+        Optional<OffertaSolido> oAnalisi = offertaSolidoRepository.findById(newOffertaSolido.getId());
+        if (oAnalisi.isPresent()){
+            OffertaSolido offertaSolido = oAnalisi.get();
+            //TODO: set new fields
+            offertaSolidoRepository.save(offertaSolido);
+            return offertaSolido;
+        }
+        return null;
     }
 }

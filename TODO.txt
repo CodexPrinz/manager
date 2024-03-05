@@ -4,5 +4,5 @@ TODO:
 - created(inserted date) on date through annotation
 - Anagrafica on delete, associated delete offerte
 - Check codice ficale is right, also partita
-- check idanag to the other table
+- change api request body to dto
 

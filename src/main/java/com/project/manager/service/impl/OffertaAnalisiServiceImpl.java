@@ -58,7 +58,7 @@ public class OffertaAnalisiServiceImpl implements OffertaAnalisiService {
     }
 
     @Override
-    public void deleteoffertaAnalisiById(Long id) {
+    public void deleteOffertaAnalisiById(Long id) {
         Optional<OffertaAnalisi> oAnalisi = offertaAnalisiRepository.findById(id);
         if (oAnalisi.isPresent()){
             offertaAnalisiRepository.deleteById(id); // TODO: check out deleteAllById

@@ -16,7 +16,7 @@ public interface OffertaAnalisiService {
 
     List<OffertaAnalisi> getAll();
 
-    void deleteoffertaAnalisiById(Long id);
+    void deleteOffertaAnalisiById(Long id);
     OffertaAnalisi createOffertaAnalisi(OffertaAnalisi offertaAnalisi);
     OffertaAnalisi updateOffreAnalisi(OffertaAnalisi offertaAnalisi);
 }
