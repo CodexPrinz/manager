@@ -11,6 +11,7 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
     hibernate:
       ddl-auto: update
   h2:
@@ -23,3 +24,4 @@ spring:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
 
+ #   path: /home/gitpod/testdb

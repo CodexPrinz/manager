@@ -15,4 +15,8 @@ public interface OffertaAnalisiService {
     List<OffertaAnalisi> getOffertaAnalisiByPIva(String pIva);
 
     List<OffertaAnalisi> getAll();
+
+    void deleteoffertaAnalisiById(Long id);
+    OffertaAnalisi createOffertaAnalisi(OffertaAnalisi offertaAnalisi);
+    OffertaAnalisi updateOffreAnalisi(OffertaAnalisi offertaAnalisi);
 }
