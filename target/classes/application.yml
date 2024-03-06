@@ -1,6 +1,9 @@
 logging:
   file:
     path:
+  level:
+    sql: info  # change this to info before going live
+
 
 # h2 database configuration
 spring:
@@ -45,6 +48,7 @@ spring:
       matching-strategy: ANT_PATH_MATCHER
 
  #   path: /home/gitpod/testdb
+
 
 
 # desc info
