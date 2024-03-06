@@ -1,8 +1,8 @@
 package com.project.manager.entity;
 
+import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;

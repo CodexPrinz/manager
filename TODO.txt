@@ -4,5 +4,11 @@ TODO:
 - created(inserted date) on date through annotation
 - Anagrafica on delete, associated delete offerte
 - Check codice ficale is right, also partita
-- change api request body to dto
+- map api request body from dto
+- swagger https://www.bezkoder.com/spring-boot-swagger-3/, this linked solved the swagger problem
+    http://localhost:8080/swagger-ui/index.html
+-
+-
+
+
 

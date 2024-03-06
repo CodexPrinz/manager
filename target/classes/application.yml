@@ -4,8 +4,9 @@ logging:
 
 # h2 database configuration
 spring:
+#---------   h2
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -14,14 +15,41 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
   h2:
     console:
       enabled: true
       path: /h2-console
-      settings: 
+      settings:
         web-allow-others: true
+
+#-------  mysql
+
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC
+#    username: ${test}
+#    password: ${test}
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#        format_sql: true
+
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
 
  #   path: /home/gitpod/testdb
+
+
+# desc info
+dev-info:
+  mail: PRINCE.22.REPLY@GMAIL.COM
+  server-name: RANIERI_AMBIENTE
+  developer: DONCHRIS
+  description: GESTIONE RIFIUTI

@@ -1,8 +1,8 @@
 package com.project.manager.entity;
 
+import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
