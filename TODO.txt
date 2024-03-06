@@ -8,6 +8,8 @@ TODO:
 - swagger https://www.bezkoder.com/spring-boot-swagger-3/, this linked solved the swagger problem
     http://localhost:8080/swagger-ui/index.html
 -
+- finish file upload
+- CF check
 -
 
 

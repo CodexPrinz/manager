@@ -69,6 +69,9 @@ public class Anagrafica implements Serializable {
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
     @Column(name = "smaltimento")
     private List<OffertaSmaltimento> offertaSmaltimentoList;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
+    @Column(name = "Attachment")
+    private List<Attachment> attachmentList;
 
     public Anagrafica() {
     }
@@ -245,6 +248,7 @@ public class Anagrafica implements Serializable {
                 ", offertaLiquidoList=" + offertaLiquidoList +
                 ", offertaSolidoList=" + offertaSolidoList +
                 ", offertaSmaltimentoList=" + offertaSmaltimentoList +
+                ", attachmentList=" + attachmentList +
                 '}';
     }
 
@@ -266,5 +270,13 @@ public class Anagrafica implements Serializable {
 
     public void setOffertaSmaltimentoList(List<OffertaSmaltimento> offertaSmaltimentoList) {
         this.offertaSmaltimentoList = offertaSmaltimentoList;
+    }
+
+    public List<Attachment> getAttachmentList() {
+        return attachmentList;
+    }
+
+    public void setAttachmentList(List<Attachment> attachmentList) {
+        this.attachmentList = attachmentList;
     }
 }
