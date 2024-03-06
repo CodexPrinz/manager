@@ -25,3 +25,4 @@ spring:
       matching-strategy: ANT_PATH_MATCHER
 
  #   path: /home/gitpod/testdb
+#   jdbc:h2:mem:testdb, use this on the gitpod
