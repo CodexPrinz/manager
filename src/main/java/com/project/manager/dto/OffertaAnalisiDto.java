@@ -2,11 +2,8 @@ package com.project.manager.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.manager.entity.Anagrafica;
-import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class OffertaAnalisiDto {
