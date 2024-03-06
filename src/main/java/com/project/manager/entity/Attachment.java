@@ -17,6 +17,7 @@ public class Attachment implements Serializable {
     @Column(name = "FILE_TYPE")
     private String fileType;
     @Column(name = "FILE")
+    @Lob
     private byte[] fileContent;
     @Column(name = "FILE_SIZE")
     private Float fileSize;

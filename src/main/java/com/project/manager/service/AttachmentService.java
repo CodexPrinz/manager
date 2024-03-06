@@ -1,5 +1,6 @@
 package com.project.manager.service;
 
+import com.project.manager.dto.AttachmentDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.entity.Attachment;
 import com.project.manager.entity.OffertaAnalisi;
@@ -14,7 +15,7 @@ public interface AttachmentService {
 //    List<Attachment> getAttachmentByCF(String cf);
 //    List<Attachment> getAttachmentByPIva(String pIva);
     void deleteAttachmentById(Long id);
-    Attachment saveAttachment(Attachment attachment);
+    Attachment saveAttachment(AttachmentDto attachmentDto);
     Attachment updateAttachment(Attachment attachment);
 
 }

@@ -1,6 +1,7 @@
 package com.project.manager.service.impl;
 
 import com.project.manager.constants.MessageConst;
+import com.project.manager.dto.AttachmentDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.entity.Attachment;
 import com.project.manager.repository.AttachmentRepository;
@@ -49,9 +50,14 @@ public class AttachmentServiceImpl implements AttachmentService {
     }
 
     @Override
-    public Attachment saveAttachment(Attachment attachment) {
+    public Attachment saveAttachment(AttachmentDto attachmentDto) {
         // TODO: test
-        String fileName = StringUtils.cleanPath(attachment.getFileName());
+        String fileName = StringUtils.cleanPath(attachmentDto.getFileName());
+        Attachment attachment = new Attachment();
+        attachment.setDownloadUrl(attachmentDto.getDownloadUrl());
+        attachment.setFileContent(attachmentDto.getFileContent());
+        attachment.setFileName(attachmentDto.getFileName());
+        attachment.setFileSize(attachmentDto.getFileSize());
 
         return attachmentRepository.save(attachment);
     }

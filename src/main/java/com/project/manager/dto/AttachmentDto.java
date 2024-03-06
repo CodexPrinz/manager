@@ -8,6 +8,7 @@ public class AttachmentDto {
     private String fileType;
     private byte[] fileContent;
     private Float fileSize;
+    private String downloadUrl;
 
     public AttachmentDto() {
     }
@@ -42,5 +43,13 @@ public class AttachmentDto {
 
     public void setFileSize(Float fileSize) {
         this.fileSize = fileSize;
+    }
+
+    public String getDownloadUrl() {
+        return downloadUrl;
+    }
+
+    public void setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
     }
 }
