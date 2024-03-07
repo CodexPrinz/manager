@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
@@ -20,6 +22,7 @@ public class Anagrafica implements Serializable {
     private Long id;
     @Column(name = "CODICE_FISCALE")
     @NotBlank
+    @Size(min = 16, max = 16, message = "Deve essere di lunghezza 16")
     private String codiceFiscale;
     @Column(name = "PARTITA_IVA")
     private String partitaIva;
