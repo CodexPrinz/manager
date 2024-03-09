@@ -4,6 +4,7 @@ import com.project.manager.constants.MessageConst;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.repository.AnagraficaRepository;
 import com.project.manager.service.AnagraficaService;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class AnagraficaServiceImpl implements AnagraficaService {
 
     private final static Logger logger =  LoggerFactory.getLogger(AnagraficaService.class);
+    ModelMapper mapper;
 
     private AnagraficaRepository anagraficaRepository;
 
@@ -45,6 +47,7 @@ public class AnagraficaServiceImpl implements AnagraficaService {
 
     @Override
     public Anagrafica updateAnagrafica(Anagrafica anagrafica) {
+        mapper = new ModelMapper();
         Optional<Anagrafica> optionalAnagrafica = anagraficaRepository.findById(anagrafica.getId());
         if (optionalAnagrafica.isPresent()){
             Anagrafica anagrafica1 = optionalAnagrafica.get();
@@ -55,6 +58,7 @@ public class AnagraficaServiceImpl implements AnagraficaService {
             anagrafica1.setCodiceAteco(optionalAnagrafica.get().getCodiceAteco());
             anagrafica1.setCodiceFiscale(optionalAnagrafica.get().getCodiceFiscale());
             // TODO: find out the modifiable fields
+            //mapper.map(anagrafica1, );
             try {
                 anagraficaRepository.save(anagrafica1);
                 return anagrafica1;
