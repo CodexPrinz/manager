@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class OffertaAnalisiDto {
 
+    private Long id;
     @JsonProperty(value = "ID_ANAGRAFICA", required = true)
     @NotNull
     private Anagrafica idAnag;
@@ -43,6 +44,14 @@ public class OffertaAnalisiDto {
 
     public String getCodiceFiscale() {
         return codiceFiscale;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setCodiceFiscale(String codiceFiscale) {

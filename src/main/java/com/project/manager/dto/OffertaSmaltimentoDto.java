@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class OffertaSmaltimentoDto {
+    private Long id;
     @JsonProperty("ID_ANAGRAFICA")
     private Anagrafica idAnag;
     @JsonProperty("CODICE_FISCALE")
@@ -38,6 +39,15 @@ public class OffertaSmaltimentoDto {
     private String condizioniDiPagamento;
     @JsonProperty("DATA_FIRMA")
     private Date dataFirma;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @JsonProperty("FIRMA_DIGITALE")
     private String firmaDigitale;
 

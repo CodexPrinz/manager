@@ -1,5 +1,6 @@
 package com.project.manager.controller;
 
+import com.project.manager.dto.AnagraficaDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.service.AnagraficaService;
 import org.slf4j.Logger;
@@ -44,7 +45,7 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> createAnagrafica(@RequestBody(required = true) Anagrafica anagrafica ){
+    public ResponseEntity<Anagrafica> createAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
         Anagrafica anag = null;
         try {
             anag = anagraficaService.createAnagrafica(anagrafica);
@@ -59,7 +60,7 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> updateAnagrafica(@RequestBody(required = true) Anagrafica anagrafica ){
+    public ResponseEntity<Anagrafica> updateAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
         Anagrafica anag = null;
         try {
             anag = anagraficaService.updateAnagrafica(anagrafica);

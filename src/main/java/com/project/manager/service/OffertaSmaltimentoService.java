@@ -1,22 +1,22 @@
 package com.project.manager.service;
 
-import com.project.manager.entity.Anagrafica;
-import com.project.manager.entity.OffertaLiquido;
-import com.project.manager.entity.OffertaSmaltimento;
+import com.project.manager.dto.AnagraficaDto;
+import com.project.manager.dto.OffertaSmaltimentoDto;
+import com.project.manager.resource.OffertaSmaltimentoResponse;
 
 import java.util.List;
 
 public interface OffertaSmaltimentoService {
 
-    OffertaSmaltimento getOffertaSmaltimentoById(Long id);
+    OffertaSmaltimentoResponse getOffertaSmaltimentoById(Long id);
 
-    List<OffertaSmaltimento> getOffertaSmaltimentoByAnagId(Anagrafica anag);
+    List<OffertaSmaltimentoResponse> getOffertaSmaltimentoByAnagId(AnagraficaDto anag);
 
-    List<OffertaSmaltimento> getOffertaSmaltimentoByCF(String cf);
+    List<OffertaSmaltimentoResponse> getOffertaSmaltimentoByCF(String cf);
 
-    List<OffertaSmaltimento> getOffertaSmaltimentoByPIva(String pIva);
-    List<OffertaSmaltimento> getAll();
+    List<OffertaSmaltimentoResponse> getOffertaSmaltimentoByPIva(String pIva);
+    List<OffertaSmaltimentoResponse> getAll();
     void deleteOffertaSmaltimentoById(Long id);
-    OffertaSmaltimento createOffertaSmaltimentoo(OffertaSmaltimento offertaSmaltimento);
-    OffertaSmaltimento updateOffertaSmaltimento(OffertaSmaltimento offertaSmaltimento);
+    OffertaSmaltimentoResponse createOffertaSmaltimentoo(OffertaSmaltimentoDto offertaSmaltimento);
+    OffertaSmaltimentoResponse updateOffertaSmaltimento(OffertaSmaltimentoDto offertaSmaltimento);
 }

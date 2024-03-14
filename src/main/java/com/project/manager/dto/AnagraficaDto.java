@@ -1,6 +1,7 @@
 package com.project.manager.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -9,7 +10,8 @@ import java.util.Date;
 
 
 public class AnagraficaDto {
-
+    @Column(name = "ID")
+    private Long id;
     @JsonProperty(value = "CODICE_FISCALE", required = true)
     private String codiceFiscale;
     @JsonProperty("PARTITA_IVA")
@@ -167,5 +169,13 @@ public class AnagraficaDto {
 
     public void setCab(Integer cab) {
         this.cab = cab;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

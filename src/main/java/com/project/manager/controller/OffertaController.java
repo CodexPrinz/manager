@@ -1,7 +1,12 @@
 package com.project.manager.controller;
 
+import com.project.manager.dto.*;
 import com.project.manager.entity.*;
 import com.project.manager.repository.OffertaLiquidoRepository;
+import com.project.manager.resource.OffertaAnalisiResponse;
+import com.project.manager.resource.OffertaLiquidoResponse;
+import com.project.manager.resource.OffertaSmaltimentoResponse;
+import com.project.manager.resource.OffertaSolidoResponse;
 import com.project.manager.service.OffertaAnalisiService;
 import com.project.manager.service.OffertaLiquidoService;
 import com.project.manager.service.OffertaSmaltimentoService;
@@ -51,14 +56,14 @@ public class OffertaController {
             path = "/smaltimento",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSmaltimento>> getOffertaSmaltimento(){
+    public ResponseEntity<List<OffertaSmaltimentoResponse>> getOffertaSmaltimento(){
         return new ResponseEntity<>(offertaSmaltimentoService.getAll(), HttpStatus.OK);
     }
     @GetMapping(
             path = "/solido",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSolido>> getOffertaSolido(){
+    public ResponseEntity<List<OffertaSolidoResponse>> getOffertaSolido(){
         return new ResponseEntity<>(offertaSolidaService.getAll(), HttpStatus.OK);
     }
     @GetMapping(
@@ -74,7 +79,7 @@ public class OffertaController {
         produces = MediaType.APPLICATION_JSON_VALUE,
         consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaAnalisi> getOffertaAnalisiById(@PathVariable(name = "id")Long id){
+    public ResponseEntity<OffertaAnalisiResponse> getOffertaAnalisiById(@PathVariable(name = "id")Long id){
         try{
             return new ResponseEntity<>(offertaAnalisiService.getOffertaAnalisiById(id), HttpStatus.OK);
         } catch (Exception ex){
@@ -88,7 +93,7 @@ public class OffertaController {
         produces = MediaType.APPLICATION_JSON_VALUE,
         consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaAnalisi>> getOffertaAnalisiByAnagId(@RequestBody Anagrafica anagrafica){
+    public ResponseEntity<List<OffertaAnalisiResponse>> getOffertaAnalisiByAnagId(@RequestBody AnagraficaDto anagrafica){
         try{
             return new ResponseEntity<>(offertaAnalisiService.getOffertaAnalisiByAnagId(anagrafica), HttpStatus.OK);
         } catch (Exception ex){
@@ -129,7 +134,7 @@ public class OffertaController {
         produces = MediaType.APPLICATION_JSON_VALUE,
         consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaAnalisi> createOffertaAnalisi(@RequestBody @NonNull OffertaAnalisi offertaAnalisi){
+    public ResponseEntity<OffertaAnalisiDto> createOffertaAnalisi(@RequestBody @NonNull OffertaAnalisiDto offertaAnalisi){
         try{
             return new ResponseEntity<>(offertaAnalisiService.createOffertaAnalisi(offertaAnalisi), HttpStatus.CREATED);
         } catch (Exception ex){
@@ -143,7 +148,7 @@ public class OffertaController {
         produces = MediaType.APPLICATION_JSON_VALUE,
         consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaAnalisi> updateOffertaAnalisi(@RequestBody @NonNull OffertaAnalisi offertaAnalisi){
+    public ResponseEntity<OffertaAnalisiResponse> updateOffertaAnalisi(@RequestBody @NonNull OffertaAnalisiDto offertaAnalisi){
         try{
             return new ResponseEntity<>(offertaAnalisiService.updateOffreAnalisi(offertaAnalisi), HttpStatus.OK);
         } catch (Exception ex){
@@ -160,7 +165,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaLiquido> getOffertaLiquidoById(@PathVariable(name = "id")Long id){
+    public ResponseEntity<OffertaLiquidoResponse> getOffertaLiquidoById(@PathVariable(name = "id")Long id){
         try{
             return new ResponseEntity<>(offertaLiquidoService.getOffertaLiquidoById(id), HttpStatus.OK);
         } catch (Exception ex){
@@ -174,7 +179,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaLiquido>> getOffertaLiquidoByAnagId(@RequestBody Anagrafica anagrafica){
+    public ResponseEntity<List<OffertaLiquidoResponse>> getOffertaLiquidoByAnagId(@RequestBody AnagraficaDto anagrafica){
         try{
             return new ResponseEntity<>(offertaLiquidoService.getOffertaLiquidoByAnagId(anagrafica), HttpStatus.OK);
         } catch (Exception ex){
@@ -188,7 +193,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaLiquido>> getOffertaLiquidoByCF(@PathVariable(name = "cf") String cf){
+    public ResponseEntity<List<OffertaLiquidoResponse>> getOffertaLiquidoByCF(@PathVariable(name = "cf") String cf){
         try{
             return new ResponseEntity<>(offertaLiquidoService.getOffertaLiquidoByCF(cf), HttpStatus.OK);
         } catch (Exception ex){
@@ -215,7 +220,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaLiquido> createOffertaLiquido(@RequestBody @NonNull OffertaLiquido offertaLiquido){
+    public ResponseEntity<OffertaLiquidoResponse> createOffertaLiquido(@RequestBody @NonNull OffertaLiquidoDto offertaLiquido){
         try{
             return new ResponseEntity<>(offertaLiquidoService.createOffertaLiquido(offertaLiquido), HttpStatus.CREATED);
         } catch (Exception ex){
@@ -229,7 +234,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaLiquido> updateOffertaLiquido(@RequestBody @NonNull OffertaLiquido offertaLiquido){
+    public ResponseEntity<OffertaLiquidoResponse> updateOffertaLiquido(@RequestBody @NonNull OffertaLiquidoDto offertaLiquido){
         try{
             return new ResponseEntity<>(offertaLiquidoService.updateOffertaLiquido(offertaLiquido), HttpStatus.OK);
         } catch (Exception ex){
@@ -245,7 +250,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSmaltimento> getOffertaSmaltimentoById(@PathVariable(name = "id")Long id){
+    public ResponseEntity<OffertaSmaltimentoResponse> getOffertaSmaltimentoById(@PathVariable(name = "id")Long id){
         try{
             return new ResponseEntity<>(offertaSmaltimentoService.getOffertaSmaltimentoById(id), HttpStatus.OK);
         } catch (Exception ex){
@@ -259,7 +264,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSmaltimento>> getOffertaSmaltimentoByAnagId(@RequestBody @NonNull Anagrafica anagrafica){
+    public ResponseEntity<List<OffertaSmaltimentoResponse>> getOffertaSmaltimentoByAnagId(@RequestBody @NonNull AnagraficaDto anagrafica){
         try{
             return new ResponseEntity<>(offertaSmaltimentoService.getOffertaSmaltimentoByAnagId(anagrafica), HttpStatus.OK);
         } catch (Exception ex){
@@ -273,7 +278,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSmaltimento>> getOffertaSmaltimentoByCF(@PathVariable(name = "cf") String cf){
+    public ResponseEntity<List<OffertaSmaltimentoResponse>> getOffertaSmaltimentoByCF(@PathVariable(name = "cf") String cf){
         try{
             return new ResponseEntity<>(offertaSmaltimentoService.getOffertaSmaltimentoByCF(cf), HttpStatus.OK);
         } catch (Exception ex){
@@ -300,7 +305,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSmaltimento> createOffertaSmaltimento(@RequestBody @NonNull OffertaSmaltimento offertaSmaltimento){
+    public ResponseEntity<OffertaSmaltimentoResponse> createOffertaSmaltimento(@RequestBody @NonNull OffertaSmaltimentoDto offertaSmaltimento){
         try{
             return new ResponseEntity<>(offertaSmaltimentoService.createOffertaSmaltimentoo(offertaSmaltimento), HttpStatus.CREATED);
         } catch (Exception ex){
@@ -314,7 +319,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSmaltimento> updateOffertaSmaltimento(@RequestBody @NonNull OffertaSmaltimento offertaSmaltimento){
+    public ResponseEntity<OffertaSmaltimentoResponse> updateOffertaSmaltimento(@RequestBody @NonNull OffertaSmaltimentoDto offertaSmaltimento){
         try{
             return new ResponseEntity<>(offertaSmaltimentoService.updateOffertaSmaltimento(offertaSmaltimento), HttpStatus.OK);
         } catch (Exception ex){
@@ -330,7 +335,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSolido> getOffertaSolidoById(@PathVariable(name = "id")Long id){
+    public ResponseEntity<OffertaSolidoResponse> getOffertaSolidoById(@PathVariable(name = "id")Long id){
         try{
             return new ResponseEntity<>(offertaSolidaService.getOffertaSolidoById(id), HttpStatus.OK);
         } catch (Exception ex){
@@ -344,7 +349,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSolido>> getOffertaSolidoByAnagId(@RequestBody @NonNull Anagrafica anagrafica){
+    public ResponseEntity<List<OffertaSolidoResponse>> getOffertaSolidoByAnagId(@RequestBody @NonNull AnagraficaDto anagrafica){
         try{
             return new ResponseEntity<>(offertaSolidaService.getOffertaSolidoByAnagId(anagrafica), HttpStatus.OK);
         } catch (Exception ex){
@@ -358,7 +363,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<OffertaSolido>> getOffertaSolidoByCF(@PathVariable(name = "cf") String cf){
+    public ResponseEntity<List<OffertaSolidoResponse>> getOffertaSolidoByCF(@PathVariable(name = "cf") String cf){
         try{
             return new ResponseEntity<>(offertaSolidaService.getOffertaSolidoByCF(cf), HttpStatus.OK);
         } catch (Exception ex){
@@ -385,7 +390,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSolido> createOffertaSmaltimento(@RequestBody @NonNull OffertaSolido offertaSolido){
+    public ResponseEntity<OffertaSolidoResponse> createOffertaSmaltimento(@RequestBody @NonNull OffertaSolidoDto offertaSolido){
         try{
             return new ResponseEntity<>(offertaSolidaService.createOffertaSolido(offertaSolido), HttpStatus.CREATED);
         } catch (Exception ex){
@@ -399,7 +404,7 @@ public class OffertaController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OffertaSolido> updateOffertaSolido(@RequestBody @NonNull OffertaSolido offertaSolido){
+    public ResponseEntity<OffertaSolidoResponse> updateOffertaSolido(@RequestBody @NonNull OffertaSolidoDto offertaSolido){
         try{
             return new ResponseEntity<>(offertaSolidaService.updateOffertaSolido(offertaSolido), HttpStatus.OK);
         } catch (Exception ex){

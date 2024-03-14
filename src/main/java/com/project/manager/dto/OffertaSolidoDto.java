@@ -6,7 +6,7 @@ import com.project.manager.entity.Anagrafica;
 import java.util.Date;
 
 public class OffertaSolidoDto {
-
+    private Long id;
     @JsonProperty("ID_ANAGRAFICA")
     private Anagrafica idAnag;
     @JsonProperty("CODICE_FISCALE")
@@ -35,6 +35,14 @@ public class OffertaSolidoDto {
     private String firmaDigitale;
 
     public OffertaSolidoDto() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Anagrafica getIdAnag() {

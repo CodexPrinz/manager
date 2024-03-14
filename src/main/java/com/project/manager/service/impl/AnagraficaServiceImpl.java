@@ -1,6 +1,7 @@
 package com.project.manager.service.impl;
 
 import com.project.manager.constants.MessageConst;
+import com.project.manager.dto.AnagraficaDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.repository.AnagraficaRepository;
 import com.project.manager.service.AnagraficaService;
@@ -16,7 +17,7 @@ import java.util.Optional;
 public class AnagraficaServiceImpl implements AnagraficaService {
 
     private final static Logger logger =  LoggerFactory.getLogger(AnagraficaService.class);
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
     private AnagraficaRepository anagraficaRepository;
 
@@ -41,14 +42,17 @@ public class AnagraficaServiceImpl implements AnagraficaService {
     }
 
     @Override
-    public Anagrafica createAnagrafica(Anagrafica anagrafica){
-        return anagraficaRepository.save(anagrafica);
+    public Anagrafica createAnagrafica(AnagraficaDto anagrafica){
+        mapper = new ModelMapper();
+        Anagrafica anag = mapper.map(anagrafica, Anagrafica.class);
+        return anagraficaRepository.save(anag);
     }
 
     @Override
-    public Anagrafica updateAnagrafica(Anagrafica anagrafica) {
+    public Anagrafica updateAnagrafica(AnagraficaDto anagrafica) {
         mapper = new ModelMapper();
-        Optional<Anagrafica> optionalAnagrafica = anagraficaRepository.findById(anagrafica.getId());
+        Anagrafica anag = mapper.map(anagrafica, Anagrafica.class);
+        Optional<Anagrafica> optionalAnagrafica = anagraficaRepository.findById(anag.getId());
         if (optionalAnagrafica.isPresent()){
             Anagrafica anagrafica1 = optionalAnagrafica.get();
             anagrafica1.setAbi(optionalAnagrafica.get().getAbi());

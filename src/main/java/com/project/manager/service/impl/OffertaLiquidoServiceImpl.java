@@ -1,10 +1,13 @@
 package com.project.manager.service.impl;
 
 import com.project.manager.constants.MessageConst;
-import com.project.manager.entity.Anagrafica;
+import com.project.manager.dto.AnagraficaDto;
+import com.project.manager.dto.OffertaLiquidoDto;
 import com.project.manager.entity.OffertaLiquido;
 import com.project.manager.repository.OffertaLiquidoRepository;
+import com.project.manager.resource.OffertaLiquidoResponse;
 import com.project.manager.service.OffertaLiquidoService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,24 +17,32 @@ import java.util.Optional;
 public class OffertaLiquidoServiceImpl implements OffertaLiquidoService {
 
     private OffertaLiquidoRepository offertaLiquidoRepository;
+    private ModelMapper mapper;
 
     public OffertaLiquidoServiceImpl(OffertaLiquidoRepository offertaLiquidoRepository) {
         this.offertaLiquidoRepository = offertaLiquidoRepository;
     }
 
     @Override
-    public OffertaLiquido getOffertaLiquidoById(Long id) {
-        return offertaLiquidoRepository.findById(id).orElseThrow(() -> new RuntimeException(MessageConst.RECORD_DOES_NOT_EXIST+id));
+    public OffertaLiquidoResponse getOffertaLiquidoById(Long id) {
+        mapper = new ModelMapper();
+        OffertaLiquido of = offertaLiquidoRepository.findById(id).orElseThrow(() -> new RuntimeException(MessageConst.RECORD_DOES_NOT_EXIST+id));
+        return mapper.map(of, OffertaLiquidoResponse.class);
     }
 
     @Override
-    public List<OffertaLiquido> getOffertaLiquidoByAnagId(Anagrafica anag) {
-        return offertaLiquidoRepository.getOffertaLiquidoByAnagId(anag.getId());
+    public List<OffertaLiquidoResponse> getOffertaLiquidoByAnagId(AnagraficaDto anag) {
+        List<OffertaLiquido> oList = offertaLiquidoRepository.getOffertaLiquidoByAnagId(anag.getId());
+        mapper = new ModelMapper();
+        List rList = oList.stream().map(o -> mapper.map(o, OffertaLiquidoResponse.class)).toList();
+        return rList;
     }
 
     @Override
-    public List<OffertaLiquido> getOffertaLiquidoByCF(String cf) {
-        return offertaLiquidoRepository.getOffertaLiquidoByCf(cf);
+    public List<OffertaLiquidoResponse> getOffertaLiquidoByCF(String cf) {
+        List offList = offertaLiquidoRepository.getOffertaLiquidoByCf(cf);
+        List rList = offList.stream().map(o -> mapper.map(o, OffertaLiquidoResponse.class)).toList();
+        return rList;
     }
 
     @Override
@@ -50,21 +61,24 @@ public class OffertaLiquidoServiceImpl implements OffertaLiquidoService {
     }
 
     @Override
-    public OffertaLiquido createOffertaLiquido(OffertaLiquido offertaLiquido) {
-        if (offertaLiquido != null)
-            offertaLiquidoRepository.save(offertaLiquido);
+    public OffertaLiquidoResponse createOffertaLiquido(OffertaLiquidoDto offertaLiquido) {
+        mapper = new ModelMapper();
+        if (offertaLiquido != null){
+            OffertaLiquido o =mapper.map(offertaLiquido, OffertaLiquido.class);
+            offertaLiquidoRepository.save(o);
+        }
 
-        return offertaLiquido;
+        return mapper.map(offertaLiquido, OffertaLiquidoResponse.class);
     }
 
     @Override
-    public OffertaLiquido updateOffertaLiquido(OffertaLiquido newOffertaLiquido) {
+    public OffertaLiquidoResponse updateOffertaLiquido(OffertaLiquidoDto newOffertaLiquido) {
+        mapper = new ModelMapper();
         Optional<OffertaLiquido> oAnalisi = offertaLiquidoRepository.findById(newOffertaLiquido.getId());
         if (oAnalisi.isPresent()){
-            OffertaLiquido offertaLiquido = oAnalisi.get();
-            //TODO: set new fields
-            offertaLiquidoRepository.save(offertaLiquido);
-            return offertaLiquido;
+            OffertaLiquido o = mapper.map(oAnalisi.get(), OffertaLiquido.class);
+            offertaLiquidoRepository.save(o);
+            return mapper.map(newOffertaLiquido, OffertaLiquidoResponse.class);
         }
         return null;
     }

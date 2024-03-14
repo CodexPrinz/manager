@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 
 public class AttachmentDto {
 
+    private Long id;
     private String fileName;
     private String fileType;
     private byte[] fileContent;
@@ -11,6 +12,14 @@ public class AttachmentDto {
     private String downloadUrl;
 
     public AttachmentDto() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFileName() {

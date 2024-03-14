@@ -1,21 +1,22 @@
 package com.project.manager.service;
 
-import com.project.manager.entity.Anagrafica;
-import com.project.manager.entity.OffertaAnalisi;
+import com.project.manager.dto.AnagraficaDto;
+import com.project.manager.dto.OffertaLiquidoDto;
 import com.project.manager.entity.OffertaLiquido;
+import com.project.manager.resource.OffertaLiquidoResponse;
 
 import java.util.List;
 
 public interface OffertaLiquidoService {
 
-    OffertaLiquido getOffertaLiquidoById(Long id);
-    List<OffertaLiquido> getOffertaLiquidoByAnagId(Anagrafica anag);
+    OffertaLiquidoResponse getOffertaLiquidoById(Long id);
+    List<OffertaLiquidoResponse> getOffertaLiquidoByAnagId(AnagraficaDto anag);
 
-    List<OffertaLiquido> getOffertaLiquidoByCF(String cf);
+    List<OffertaLiquidoResponse> getOffertaLiquidoByCF(String cf);
 
     List<OffertaLiquido> getOffertaLiquidoByPIva(String pIva);
     List<OffertaLiquido> getAll();
     void deleteOffertaLiquidoById(Long id);
-    OffertaLiquido createOffertaLiquido(OffertaLiquido offertaLiquido);
-    OffertaLiquido updateOffertaLiquido(OffertaLiquido offertaLiquido);
+    OffertaLiquidoResponse createOffertaLiquido(OffertaLiquidoDto offertaLiquido);
+    OffertaLiquidoResponse updateOffertaLiquido(OffertaLiquidoDto offertaLiquido);
 }

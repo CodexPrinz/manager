@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class OffertaLiquidoDto {
+    private Long id;
     @JsonProperty(value = "ID_ANAGRAFICA", required = true)
     @NotNull
     private Anagrafica idAnag;
@@ -191,5 +192,13 @@ public class OffertaLiquidoDto {
 
     public void setFirmaDigitale(String firmaDigitale) {
         this.firmaDigitale = firmaDigitale;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

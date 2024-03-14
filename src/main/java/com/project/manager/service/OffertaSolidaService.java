@@ -1,19 +1,22 @@
 package com.project.manager.service;
 
+import com.project.manager.dto.AnagraficaDto;
+import com.project.manager.dto.OffertaSolidoDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.entity.OffertaSmaltimento;
 import com.project.manager.entity.OffertaSolido;
+import com.project.manager.resource.OffertaSolidoResponse;
 
 import java.util.List;
 
 public interface OffertaSolidaService {
-    OffertaSolido getOffertaSolidoById(Long id);
-    List<OffertaSolido> getOffertaSolidoByPIva(String pIva);
-    List<OffertaSolido> getOffertaSolidoByCF(String cf);
-    List<OffertaSolido> getOffertaSolidoByAnagId(Anagrafica anag);
-    List<OffertaSolido> getAll();
+    OffertaSolidoResponse getOffertaSolidoById(Long id);
+    List<OffertaSolidoResponse> getOffertaSolidoByPIva(String pIva);
+    List<OffertaSolidoResponse> getOffertaSolidoByCF(String cf);
+    List<OffertaSolidoResponse> getOffertaSolidoByAnagId(AnagraficaDto anag);
+    List<OffertaSolidoResponse> getAll();
     void deleteOffertaSolidoById(Long id);
-    OffertaSolido createOffertaSolido(OffertaSolido offertaSolido);
-    OffertaSolido updateOffertaSolido(OffertaSolido offertaSolido);
+    OffertaSolidoResponse createOffertaSolido(OffertaSolidoDto offertaSolido);
+    OffertaSolidoResponse updateOffertaSolido(OffertaSolidoDto offertaSolido);
 
 }
