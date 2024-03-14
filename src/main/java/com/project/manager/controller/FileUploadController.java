@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping(path = "/api/v1")
@@ -49,14 +54,26 @@ public class FileUploadController {
 //            Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
 //            Files.write(path, fileContent);
 
-            attachmentService.saveAttachment(dto);
 
-            return new ResponseEntity<>("File uploaded successfully. Stored at:" + file.getOriginalFilename(), HttpStatus.ACCEPTED);
-        } catch (Exception ex){
-            logger.error("File upload failed");
-            logger.info(ex.getMessage());
+            // TODO: attachmentService.saveAttachment(dto);
+            String location = UPLOAD_DIR + file.getOriginalFilename();
+            try (OutputStream out = new FileOutputStream(location)) {
+                logger.info("File location {}", location);
+               byte[] buffer = new byte[1024];
+               int bytesRead;
+
+               while ((bytesRead = file.getInputStream().read(buffer)) != -1){
+                   out.write(buffer, 0, bytesRead);
+               }
+            }  catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        return null;
+
+        return new ResponseEntity<>("File uploaded successfully. Stored at:" + file.getOriginalFilename(), HttpStatus.ACCEPTED);
     }
 
 
