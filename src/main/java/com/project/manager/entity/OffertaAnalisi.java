@@ -6,6 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -39,8 +40,7 @@ public class OffertaAnalisi implements Serializable {
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
-    @CreatedDate
-    private LocalDate dataInserimento;
+    private LocalDateTime dataInserimento;
 
     public OffertaAnalisi() {
     }
@@ -103,12 +103,12 @@ public class OffertaAnalisi implements Serializable {
         this.firmaDigitale = firmaDigitale;
     }
 
-    public LocalDate getDataInserimento() {
+    public LocalDateTime getDataInserimento() {
         return dataInserimento;
     }
-
-    public void setDataInserimento(LocalDate dataInserimento) {
-        this.dataInserimento = dataInserimento;
+    @PrePersist
+    public void setDataInserimento() {
+        this.dataInserimento = LocalDateTime.now();
     }
 
     public String getAnalisiDiClassificazione() {

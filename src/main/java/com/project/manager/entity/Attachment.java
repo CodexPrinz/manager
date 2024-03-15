@@ -3,7 +3,9 @@ package com.project.manager.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Date;
 
 @Entity
 @Table(name = "Attachment")
@@ -23,6 +25,8 @@ public class Attachment implements Serializable {
     private Float fileSize;
     @Column(name = "DOWNLOAD_URL")
     private String downloadUrl;
+    @Column(name = "DATA_INSERIMENTO")
+    private LocalDateTime dataInserimento;
     @JoinColumn(name = "ID_ANAGRAFICA")
     @ManyToOne(fetch = FetchType.LAZY)
     private Anagrafica idAnag;

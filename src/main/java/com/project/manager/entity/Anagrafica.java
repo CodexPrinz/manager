@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -58,8 +59,7 @@ public class Anagrafica implements Serializable {
     @Column(name = "CAB")
     private Integer cab;
     @Column(name = "DATA_INSERIMENTO")
-    @CreatedDate
-    private LocalDate dataInserimento;
+    private LocalDateTime dataInserimento;
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
     @Column(name = "analisi")
     private List<OffertaAnalisi> offertaAnalisiList;
@@ -207,7 +207,7 @@ public class Anagrafica implements Serializable {
         this.cab = cab;
     }
 
-    public LocalDate getDataInserimento() {
+    public LocalDateTime getDataInserimento() {
         return dataInserimento;
     }
 
@@ -219,8 +219,9 @@ public class Anagrafica implements Serializable {
         this.offertaAnalisiList = offertaAnalisiList;
     }
 
-    public void setDataInserimento(LocalDate dataInserimento) {
-        this.dataInserimento = dataInserimento;
+    @PrePersist
+    public void setDataInserimento() {
+        this.dataInserimento = LocalDateTime.now();
     }
 
     public List<OffertaLiquido> getOffertaLiquidoList() {

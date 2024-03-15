@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -42,8 +43,7 @@ public class OffertaSolido implements Serializable {
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
-    @CreatedDate
-    private Date dataInserimento;
+    private LocalDateTime dataInserimento;
     
 
     public OffertaSolido() {
@@ -113,7 +113,7 @@ public class OffertaSolido implements Serializable {
         this.firmaDigitale = firmaDigitale;
     }
 
-    public Date getDataInserimento() {
+    public LocalDateTime getDataInserimento() {
         return dataInserimento;
     }
 
@@ -186,7 +186,7 @@ public class OffertaSolido implements Serializable {
         this.compilazioneGestioneFormulario = compilazioneGestioneFormulario;
     }
 
-    public void setDataInserimento(Date dataInserimento) {
-        this.dataInserimento = dataInserimento;
+    public void setDataInserimento() {
+        this.dataInserimento = LocalDateTime.now();
     }
 }

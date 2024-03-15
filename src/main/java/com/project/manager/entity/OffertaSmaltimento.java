@@ -6,6 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -22,8 +23,7 @@ public class OffertaSmaltimento implements Serializable {
     @Column(name = "CODICE_FISCALE")
     private String codiceFiscale;
     @Column(name = "DATA_INSERIMENTO")
-    @CreatedDate
-    private LocalDate dataInserimento;
+    private LocalDateTime dataInserimento;
     @Column(name = "PARTITA_IVA")
     private String partitaIva;
     @Column(name = "CODICE_EER_CER")
@@ -131,11 +131,11 @@ public class OffertaSmaltimento implements Serializable {
     public void setTrasportoConAutotrenoBilico(String trasportoConAutotrenoBilico) {
         this.trasportoConAutotrenoBilico = trasportoConAutotrenoBilico;
     }
-    public LocalDate getDataInserimento() {
+    public LocalDateTime getDataInserimento() {
         return dataInserimento;
     }
-    public void setDataInserimento(LocalDate dataInserimento) {
-        this.dataInserimento = dataInserimento;
+    public void setDataInserimento() {
+        this.dataInserimento = LocalDateTime.now();
     }
     public String getExtraSostaDopoLaPrimaOraDiCarico() {
         return extraSostaDopoLaPrimaOraDiCarico;
