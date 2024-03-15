@@ -90,6 +90,14 @@ public class Attachment implements Serializable {
         this.downloadUrl = downloadUrl;
     }
 
+    public LocalDateTime getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento() {
+        this.dataInserimento = LocalDateTime.now();
+    }
+
     @Override
     public String toString() {
         return "Attachment{" +
