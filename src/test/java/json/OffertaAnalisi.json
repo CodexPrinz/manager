@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "idAnag": {
+    "id": 1,
+    "codiceFiscale": "ABCDEF12G34H567I",
+    "partitaIva": "01234567890",
+  },
+  "codiceFiscale": "ABCDEF12G34H567I",
+  "partitaIva": "01234567890",
+  "codiceEER": "EER123",
+  "descrizioneRifiuto": "Example description",
+  "validitaOfferta": "2024-03-15",
+  "condizioniDiPagamento": "30 days net",
+  "analisiDiClassificazione": "Example analysis",
+  "dataFirma": "2024-03-15",
+  "firmaDigitale": "Example digital signature",
+  "dataInserimento": "2024-03-15T20:48:20"
+}

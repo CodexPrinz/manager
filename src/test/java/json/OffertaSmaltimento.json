@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "idAnag": {
+    "id": 1,
+    "codiceFiscale": "ABCDEF12G34H567I",
+    "partitaIva": "01234567890",
+
+  },
+  "codiceFiscale": "ABCDEF12G34H567I",
+  "dataInserimento": "2024-03-15T20:48:20",
+  "partitaIva": "01234567890",
+  "codiceEER": "EER123",
+  "descrizioneRifiuto": "Example description",
+  "smaltimento": "Example disposal",
+  "trasportoConMotrice": "Yes",
+  "trasportoConAutotrenoBilico": "No",
+  "extraSostaDopoLaPrimaOraDiCarico": "Yes",
+  "quotaMinimaFatturabileFormulario": "1000",
+  "compilazioneGestioneFormulario": "Yes",
+  "analisiDiClassificazione": "Example analysis",
+  "validitaOfferta": "2024-03-15",
+  "condizioniDiPagamento": "30 days net",
+  "dataFirma": "2024-03-15",
+  "firmaDigitale": "Example digital signature"
+}
