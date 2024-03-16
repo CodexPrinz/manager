@@ -4,7 +4,6 @@ package com.project.manager.resource;
 import com.project.manager.entity.Anagrafica;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class OffertaSmaltimentoResponse  {
 
@@ -23,9 +22,9 @@ public class OffertaSmaltimentoResponse  {
     private String quotaMinimaFatturabileFormulario;
     private String compilazioneGestioneFormulario;
     private String analisiDiClassificazione;
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     private String condizioniDiPagamento;
-    private Date dataFirma;
+    private LocalDate dataFirma;
 
     public String getCodiceFiscale() {
         return codiceFiscale;
@@ -112,10 +111,10 @@ public class OffertaSmaltimentoResponse  {
     public void setAnalisiDiClassificazione(String analisiDiClassificazione) {
         this.analisiDiClassificazione = analisiDiClassificazione;
     }
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
     public String getCondizioniDiPagamento() {
@@ -131,10 +130,10 @@ public class OffertaSmaltimentoResponse  {
     public void setIdAnag(Anagrafica idAnag) {
         this.idAnag = idAnag;
     }
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 

@@ -4,7 +4,7 @@ package com.project.manager.resource;
 import com.project.manager.entity.Anagrafica;
 import jakarta.persistence.Column;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class OffertaSolidoResponse  {
     private Anagrafica idAnag;
@@ -15,11 +15,11 @@ public class OffertaSolidoResponse  {
     private String extraSostaDopoLaPrimaOraDiCarico;
     private String quotaMinimaFatturabileFormulario;
     private String compilazioneGestioneFormulario;
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     private String condizioniDiPagamento;
     private String analisiDiOmologa;
     @Column(name = "DATA_FIRMA")
-    private Date dataFirma;
+    private LocalDate dataFirma;
 
 
 
@@ -42,11 +42,11 @@ public class OffertaSolidoResponse  {
         this.descrizioneRifiuto = descrizioneRifiuto;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 
@@ -66,11 +66,11 @@ public class OffertaSolidoResponse  {
         this.analisiDiOmologa = analisiDiOmologa;
     }
 
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
 
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 

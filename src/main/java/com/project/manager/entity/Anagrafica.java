@@ -1,16 +1,13 @@
 package com.project.manager.entity;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -51,7 +48,7 @@ public class Anagrafica implements Serializable {
     @Column(name = "MODALIATA_DI_PAGAMENTO")
     private String modalitaDiPagamento;
     @Column(name = "SCADENZA")
-    private Date scadenza;
+    private LocalDate scadenza;
     @Column(name = "BANCA")
     private String banca;
     @Column(name = "ABI")
@@ -175,11 +172,11 @@ public class Anagrafica implements Serializable {
         this.modalitaDiPagamento = modalitaDiPagamento;
     }
 
-    public Date getScadenza() {
+    public LocalDate getScadenza() {
         return scadenza;
     }
 
-    public void setScadenza(Date scadenza) {
+    public void setScadenza(LocalDate scadenza) {
         this.scadenza = scadenza;
     }
 

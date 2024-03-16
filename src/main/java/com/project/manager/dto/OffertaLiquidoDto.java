@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.manager.entity.Anagrafica;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class OffertaLiquidoDto {
@@ -37,13 +38,13 @@ public class OffertaLiquidoDto {
     @JsonProperty("ANALISI_DI_OMOLOGO")
     private String analisiDiOmologo;
     @JsonProperty("VALIDITA_OFFERTA")
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
     @JsonProperty("ANALISI_DI_OMOLOGA")
     private String analisiDiOmologa;
     @JsonProperty(value = "DATA_FIRMA", required = true)
-    private Date dataFirma;
+    private LocalDate dataFirma;
     @JsonProperty("FIRMA_DIGITALE")
     private String firmaDigitale;
 
@@ -154,11 +155,11 @@ public class OffertaLiquidoDto {
         this.analisiDiOmologo = analisiDiOmologo;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 
@@ -178,11 +179,11 @@ public class OffertaLiquidoDto {
         this.analisiDiOmologa = analisiDiOmologa;
     }
 
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
 
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 

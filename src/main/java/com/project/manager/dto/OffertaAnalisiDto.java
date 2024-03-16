@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.manager.entity.Anagrafica;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class OffertaAnalisiDto {
@@ -21,7 +22,7 @@ public class OffertaAnalisiDto {
     @JsonProperty("DESCRIZIONE_RIFIUTI")
     private String descrizioneRifiuto;
     @JsonProperty("VALIDITA_OFFERTA")
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
     @JsonProperty("ANALISI_DI_CLASSIFCAZIONE")
@@ -82,11 +83,11 @@ public class OffertaAnalisiDto {
         this.descrizioneRifiuto = descrizioneRifiuto;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 

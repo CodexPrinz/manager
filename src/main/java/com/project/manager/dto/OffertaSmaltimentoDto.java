@@ -34,11 +34,11 @@ public class OffertaSmaltimentoDto {
     @JsonProperty("ANALISI_DI_CLASSIFICAZIONE")
     private String analisiDiClassificazione;
     @JsonProperty("VALIDITA_OFFERTA")
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
     @JsonProperty("DATA_FIRMA")
-    private Date dataFirma;
+    private LocalDate dataFirma;
 
     public Long getId() {
         return id;
@@ -158,11 +158,11 @@ public class OffertaSmaltimentoDto {
         this.analisiDiClassificazione = analisiDiClassificazione;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 
@@ -174,11 +174,11 @@ public class OffertaSmaltimentoDto {
         this.condizioniDiPagamento = condizioniDiPagamento;
     }
 
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
 
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 

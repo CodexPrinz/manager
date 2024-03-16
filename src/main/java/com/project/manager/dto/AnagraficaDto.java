@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -40,7 +41,7 @@ public class AnagraficaDto {
     @JsonProperty("MODALIATA_DI_PAGAMENTO")
     private String modalitaDiPagamento;
     @JsonProperty("SCADENZA")
-    private Date scadenza;
+    private LocalDate scadenza;
     @JsonProperty("BANCA")
     private String banca;
     @JsonProperty("ABI")
@@ -139,11 +140,11 @@ public class AnagraficaDto {
         this.modalitaDiPagamento = modalitaDiPagamento;
     }
 
-    public Date getScadenza() {
+    public LocalDate getScadenza() {
         return scadenza;
     }
 
-    public void setScadenza(Date scadenza) {
+    public void setScadenza(LocalDate scadenza) {
         this.scadenza = scadenza;
     }
 

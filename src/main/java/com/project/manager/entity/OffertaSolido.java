@@ -2,11 +2,10 @@ package com.project.manager.entity;
 
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "OFFERTE_SOLIDO")
@@ -33,13 +32,13 @@ public class OffertaSolido implements Serializable {
     @Column(name = "COMPILAZIONE_GESTIONE_FORMULARIO")
     private String compilazioneGestioneFormulario;
     @Column(name = "VALIDITA_OFFERTA")
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     @Column(name = "CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
     @Column(name = "ANALISI_DI_OMOLOGA")
     private String analisiDiOmologa;
     @Column(name = "DATA_FIRMA")
-    private Date dataFirma;
+    private LocalDate dataFirma;
     @Column(name = "FIRMA_DIGITALE")
     private String firmaDigitale;
     @Column(name = "DATA_INSERIMENTO")
@@ -73,11 +72,11 @@ public class OffertaSolido implements Serializable {
         this.descrizioneRifiuto = descrizioneRifiuto;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 
@@ -97,11 +96,11 @@ public class OffertaSolido implements Serializable {
         this.analisiDiOmologa = analisiDiOmologa;
     }
 
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
 
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 

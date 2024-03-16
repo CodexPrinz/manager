@@ -1,11 +1,11 @@
 package com.project.manager.resource;
 
 import com.project.manager.entity.*;
-
-import java.util.Date;
+;
+import java.time.LocalDate;
 import java.util.List;
 
-public class anagraficaResponse {
+public class AnagraficaResponse {
     private String codiceFiscale;
     private String partitaIva;
     private String ragioneSociale;
@@ -17,7 +17,7 @@ public class anagraficaResponse {
     private String codiceUnivoco;
     private String codiceAteco;
     private String modalitaDiPagamento;
-    private Date scadenza;
+    private LocalDate scadenza;
     private String banca;
     private Integer abi;
     private Integer cab;
@@ -119,11 +119,11 @@ public class anagraficaResponse {
         this.modalitaDiPagamento = modalitaDiPagamento;
     }
 
-    public Date getScadenza() {
+    public LocalDate getScadenza() {
         return scadenza;
     }
 
-    public void setScadenza(Date scadenza) {
+    public void setScadenza(LocalDate scadenza) {
         this.scadenza = scadenza;
     }
 

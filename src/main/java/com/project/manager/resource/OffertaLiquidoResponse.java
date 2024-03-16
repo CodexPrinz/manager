@@ -2,7 +2,7 @@ package com.project.manager.resource;
 
 import com.project.manager.entity.Anagrafica;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class OffertaLiquidoResponse  {
 
@@ -21,10 +21,10 @@ public class OffertaLiquidoResponse  {
     private String quotaMinimaFatturabile;
     private String compilazioneGestioneFormulario;
     private String analisiDiOmologo;
-    private Date validitaOfferta;
+    private LocalDate validitaOfferta;
     private String condizioniDiPagamento;
     private String analisiDiOmologa;
-    private Date dataFirma;
+    private LocalDate dataFirma;
     private String firmaDigitale;
 
     public OffertaLiquidoResponse() {
@@ -134,11 +134,11 @@ public class OffertaLiquidoResponse  {
         this.analisiDiOmologo = analisiDiOmologo;
     }
 
-    public Date getValiditaOfferta() {
+    public LocalDate getValiditaOfferta() {
         return validitaOfferta;
     }
 
-    public void setValiditaOfferta(Date validitaOfferta) {
+    public void setValiditaOfferta(LocalDate validitaOfferta) {
         this.validitaOfferta = validitaOfferta;
     }
 
@@ -158,11 +158,11 @@ public class OffertaLiquidoResponse  {
         this.analisiDiOmologa = analisiDiOmologa;
     }
 
-    public Date getDataFirma() {
+    public LocalDate getDataFirma() {
         return dataFirma;
     }
 
-    public void setDataFirma(Date dataFirma) {
+    public void setDataFirma(LocalDate dataFirma) {
         this.dataFirma = dataFirma;
     }
 
