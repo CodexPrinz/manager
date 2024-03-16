@@ -1,0 +1,1953 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/v1/offerta/solido": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSolido",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSolidoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "updateOffertaSolido",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaSolidoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSolidoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "createOffertaSmaltimento",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaSolidoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSolidoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/smaltimento": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSmaltimento",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "updateOffertaSmaltimento",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaSmaltimentoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "createOffertaSmaltimento_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaSmaltimentoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/liquido": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaLiquido",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaLiquido"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "updateOffertaLiquido",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaLiquidoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaLiquidoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "createOffertaLiquido",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaLiquidoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaLiquidoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/analisi": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaAnalisi",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaAnalisi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "updateOffertaAnalisi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaAnalisiDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaAnalisiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "createOffertaAnalisi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OffertaAnalisiDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaAnalisiDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/anagrafica/update": {
+      "put": {
+        "tags": [
+          "anagrafica-controller"
+        ],
+        "operationId": "updateAnagrafica",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnagraficaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnagraficaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/upload": {
+      "post": {
+        "tags": [
+          "file-upload-controller"
+        ],
+        "operationId": "upload",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "file"
+                ],
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/anagrafica/": {
+      "post": {
+        "tags": [
+          "anagrafica-controller"
+        ],
+        "operationId": "createAnagrafica",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnagraficaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnagraficaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/solido/{id}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSolidoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSolidoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "deleteOffertaSolidoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/solido/{cf}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSolidoByCF",
+        "parameters": [
+          {
+            "name": "cf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSolidoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/solido/anag": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSolidoByAnagId",
+        "parameters": [
+          {
+            "name": "anagrafica",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AnagraficaDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSolidoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/smaltimento/{id}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSmaltimentoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "deleteOffertaSmaltimentoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/smaltimento/{cf}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSmaltimentoByCF",
+        "parameters": [
+          {
+            "name": "cf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/smaltimento/anag": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaSmaltimentoByAnagId",
+        "parameters": [
+          {
+            "name": "anagrafica",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AnagraficaDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaSmaltimentoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/liquido/{id}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaLiquidoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaLiquidoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "deleteOffertaLiquidobyId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/liquido/{cf}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaLiquidoByCF",
+        "parameters": [
+          {
+            "name": "cf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaLiquidoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/liquido/anag": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaLiquidoByAnagId",
+        "parameters": [
+          {
+            "name": "anagrafica",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AnagraficaDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaLiquidoResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/analisi/{id}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaAnalisiById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffertaAnalisiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "deleteOffertaAnalisibyId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/analisi/{cf}": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaAnalisiByCF",
+        "parameters": [
+          {
+            "name": "cf",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaAnalisi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/offerta/analisi/anag": {
+      "get": {
+        "tags": [
+          "offerta-controller"
+        ],
+        "operationId": "getOffertaAnalisiByAnagId",
+        "parameters": [
+          {
+            "name": "anagrafica",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AnagraficaDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffertaAnalisiResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/anagrafica/{id}": {
+      "get": {
+        "tags": [
+          "anagrafica-controller"
+        ],
+        "operationId": "getAnagricaById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnagraficaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/anagrafica/all": {
+      "get": {
+        "tags": [
+          "anagrafica-controller"
+        ],
+        "operationId": "getAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnagraficaResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/anagrafica/delete/{id}": {
+      "delete": {
+        "tags": [
+          "anagrafica-controller"
+        ],
+        "operationId": "deleteAnagrafica",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Anagrafica": {
+        "required": [
+          "codiceFiscale",
+          "codiceUnivoco",
+          "email",
+          "telefone"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "ragioneSociale": {
+            "type": "string"
+          },
+          "sedeLegale": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "perosnaDiRiferimento": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "indirizzoPec": {
+            "type": "string"
+          },
+          "codiceUnivoco": {
+            "type": "string"
+          },
+          "codiceAteco": {
+            "type": "string"
+          },
+          "modalitaDiPagamento": {
+            "type": "string"
+          },
+          "scadenza": {
+            "type": "string",
+            "format": "date"
+          },
+          "banca": {
+            "type": "string"
+          },
+          "abi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cab": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "offertaAnalisiList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaAnalisi"
+            }
+          },
+          "offertaLiquidoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaLiquido"
+            }
+          },
+          "offertaSolidoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaSolido"
+            }
+          },
+          "offertaSmaltimentoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaSmaltimento"
+            }
+          },
+          "attachmentList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          }
+        }
+      },
+      "Attachment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "fileContent": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "fileSize": {
+            "type": "number",
+            "format": "float"
+          },
+          "downloadUrl": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          }
+        }
+      },
+      "OffertaAnalisi": {
+        "required": [
+          "idAnag"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OffertaLiquido": {
+        "required": [
+          "idAnag"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "trasportoConMotriceCisterna": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "utilizzoCanalJet": {
+            "type": "string"
+          },
+          "impiegoSecondoOperatore": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabile": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiOmologo": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OffertaSmaltimento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "smaltimento": {
+            "type": "string"
+          },
+          "trasportoConMotrice": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaSolido": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OffertaSolidoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaSolidoResponse": {
+        "type": "object",
+        "properties": {
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OffertaSmaltimentoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "smaltimento": {
+            "type": "string"
+          },
+          "trasportoConMotrice": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "FIRMA_DIGITALE": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaSmaltimentoResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "smaltimento": {
+            "type": "string"
+          },
+          "trasportoConMotrice": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabileFormulario": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "OffertaLiquidoDto": {
+        "required": [
+          "codiceFiscale",
+          "dataFirma",
+          "idAnag"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "trasportoConMotriceCisterna": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "utilizzoCanalJet": {
+            "type": "string"
+          },
+          "impiegoSecondoOperatore": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabile": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiOmologo": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaLiquidoResponse": {
+        "type": "object",
+        "properties": {
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trasportoConMotriceCisterna": {
+            "type": "string"
+          },
+          "trasportoConAutotrenoBilico": {
+            "type": "string"
+          },
+          "extraSostaDopoLaPrimaOraDiCarico": {
+            "type": "string"
+          },
+          "utilizzoCanalJet": {
+            "type": "string"
+          },
+          "impiegoSecondoOperatore": {
+            "type": "string"
+          },
+          "quotaMinimaFatturabile": {
+            "type": "string"
+          },
+          "compilazioneGestioneFormulario": {
+            "type": "string"
+          },
+          "analisiDiOmologo": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiOmologa": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaAnalisiDto": {
+        "required": [
+          "codiceFiscale",
+          "dataFirma",
+          "idAnag"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          }
+        }
+      },
+      "OffertaAnalisiResponse": {
+        "type": "object",
+        "properties": {
+          "idAnag": {
+            "$ref": "#/components/schemas/Anagrafica"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "codiceEER": {
+            "type": "string"
+          },
+          "descrizioneRifiuto": {
+            "type": "string"
+          },
+          "validitaOfferta": {
+            "type": "string",
+            "format": "date"
+          },
+          "condizioniDiPagamento": {
+            "type": "string"
+          },
+          "analisiDiClassificazione": {
+            "type": "string"
+          },
+          "dataFirma": {
+            "type": "string",
+            "format": "date"
+          },
+          "firmaDigitale": {
+            "type": "string"
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AnagraficaDto": {
+        "required": [
+          "codiceFiscale",
+          "codiceUnivoco",
+          "email",
+          "perosnaDiRiferimento",
+          "telefone"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "ragioneSociale": {
+            "type": "string"
+          },
+          "sedeLegale": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "perosnaDiRiferimento": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "indirizzoPec": {
+            "type": "string"
+          },
+          "codiceUnivoco": {
+            "type": "string"
+          },
+          "codiceAteco": {
+            "type": "string"
+          },
+          "modalitaDiPagamento": {
+            "type": "string"
+          },
+          "scadenza": {
+            "type": "string",
+            "format": "date"
+          },
+          "banca": {
+            "type": "string"
+          },
+          "abi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cab": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AnagraficaResponse": {
+        "type": "object",
+        "properties": {
+          "codiceFiscale": {
+            "type": "string"
+          },
+          "partitaIva": {
+            "type": "string"
+          },
+          "ragioneSociale": {
+            "type": "string"
+          },
+          "sedeLegale": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "perosnaDiRiferimento": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "indirizzoPec": {
+            "type": "string"
+          },
+          "codiceUnivoco": {
+            "type": "string"
+          },
+          "codiceAteco": {
+            "type": "string"
+          },
+          "modalitaDiPagamento": {
+            "type": "string"
+          },
+          "scadenza": {
+            "type": "string",
+            "format": "date"
+          },
+          "banca": {
+            "type": "string"
+          },
+          "abi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cab": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offertaAnalisiList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaAnalisi"
+            }
+          },
+          "offertaLiquidoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaLiquido"
+            }
+          },
+          "offertaSolidoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaSolido"
+            }
+          },
+          "offertaSmaltimentoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OffertaSmaltimento"
+            }
+          },
+          "attachmentList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          },
+          "dataInserimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

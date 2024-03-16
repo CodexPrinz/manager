@@ -2,22 +2,23 @@ package com.project.manager.service;
 
 import com.project.manager.dto.AnagraficaDto;
 import com.project.manager.entity.Anagrafica;
+import com.project.manager.resource.AnagraficaResponse;
 
 import java.util.List;
 
 public interface AnagraficaService {
 
-    Anagrafica getAnagraficaById(Long id);
+    AnagraficaResponse getAnagraficaById(Long id);
 
-    List<Anagrafica> getAnagraficabyCF(String cf);
+    List<AnagraficaResponse> getAnagraficabyCF(String cf);
 
-    List<Anagrafica> getAnagraficaPIva(String pIva);
+    List<AnagraficaResponse> getAnagraficaPIva(String pIva);
 
-    Anagrafica createAnagrafica(AnagraficaDto anagrafica);
+    AnagraficaResponse createAnagrafica(AnagraficaDto anagrafica);
 
-    Anagrafica updateAnagrafica(AnagraficaDto anagrafica);
+    AnagraficaResponse updateAnagrafica(AnagraficaDto anagrafica);
 
     void deleteAnagraficaByid(Long id);
 
-    List<Anagrafica> getAll();
+    List<AnagraficaResponse> getAll();
 }

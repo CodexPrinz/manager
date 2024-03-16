@@ -1,10 +1,11 @@
 package com.project.manager.controller;
 
 import com.project.manager.dto.AnagraficaDto;
-import com.project.manager.entity.Anagrafica;
+import com.project.manager.resource.AnagraficaResponse;
 import com.project.manager.service.AnagraficaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class AnagraficaController {
 
     private final static Logger logger = LoggerFactory.getLogger("AnagraficaController");
 
+    @Autowired
     public AnagraficaController(AnagraficaService anagraficaService) {
         this.anagraficaService = anagraficaService;
     }
@@ -30,8 +32,8 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> getAnagricaById(@PathVariable(value = "id") @NotNull Long id){
-        Anagrafica anag = null;
+    public ResponseEntity<AnagraficaResponse> getAnagricaById(@PathVariable(value = "id") @NotNull Long id){
+        AnagraficaResponse anag = null;
         try {
             anag = anagraficaService.getAnagraficaById(id);
             return new ResponseEntity<>(anag, HttpStatus.OK);
@@ -45,8 +47,8 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> createAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
-        Anagrafica anag = null;
+    public ResponseEntity<AnagraficaResponse> createAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
+        AnagraficaResponse anag = null;
         try {
             anag = anagraficaService.createAnagrafica(anagrafica);
             return new ResponseEntity<>(anag, HttpStatus.CREATED);
@@ -60,8 +62,8 @@ public class AnagraficaController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Anagrafica> updateAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
-        Anagrafica anag = null;
+    public ResponseEntity<AnagraficaResponse> updateAnagrafica(@RequestBody(required = true) AnagraficaDto anagrafica ){
+        AnagraficaResponse anag = null;
         try {
             anag = anagraficaService.updateAnagrafica(anagrafica);
             return new ResponseEntity<>(anag, HttpStatus.CREATED);
@@ -71,7 +73,7 @@ public class AnagraficaController {
     }
 
     @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Anagrafica>> getAll(){
+    public ResponseEntity<List<AnagraficaResponse>> getAll(){
         return ResponseEntity.ok(anagraficaService.getAll());
     }
     @DeleteMapping(

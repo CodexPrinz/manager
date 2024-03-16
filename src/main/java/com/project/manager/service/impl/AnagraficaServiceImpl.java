@@ -4,6 +4,7 @@ import com.project.manager.constants.MessageConst;
 import com.project.manager.dto.AnagraficaDto;
 import com.project.manager.entity.Anagrafica;
 import com.project.manager.repository.AnagraficaRepository;
+import com.project.manager.resource.AnagraficaResponse;
 import com.project.manager.service.AnagraficaService;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -23,49 +24,47 @@ public class AnagraficaServiceImpl implements AnagraficaService {
 
     public AnagraficaServiceImpl(AnagraficaRepository anagraficaRepository) {
         this.anagraficaRepository = anagraficaRepository;
+        this.mapper = new ModelMapper();
     }
 
     @Override
-    public Anagrafica getAnagraficaById(Long id) {
-        return anagraficaRepository.findById(id).orElseThrow(() -> new RuntimeException(MessageConst.RECORD_DOES_NOT_EXIST+id));
+    public AnagraficaResponse getAnagraficaById(Long id) {
+        Anagrafica anag = anagraficaRepository.findById(id).orElseThrow(() -> new RuntimeException(MessageConst.RECORD_DOES_NOT_EXIST+id));
+        return mapper.map(anag, AnagraficaResponse.class);
     }
 
     @Override
-    public List<Anagrafica> getAnagraficabyCF(String cf) {
-        return anagraficaRepository.findByCF(cf);
+    public List<AnagraficaResponse> getAnagraficabyCF(String cf) {
+        List<Anagrafica> al = anagraficaRepository.findByCF(cf);
+        List<AnagraficaResponse> ar = al.stream().map(a -> mapper.map(a, AnagraficaResponse.class)).toList();
+        return ar;
     }
 
 
     @Override
-    public List<Anagrafica> getAnagraficaPIva(String pIva) {
-        return anagraficaRepository.findByPIva(pIva);
+    public List<AnagraficaResponse> getAnagraficaPIva(String pIva) {
+        List<Anagrafica> al = anagraficaRepository.findByPIva(pIva);
+        List<AnagraficaResponse> ar = al.stream().map(a -> mapper.map(a, AnagraficaResponse.class)).toList();
+        return ar;
     }
 
     @Override
-    public Anagrafica createAnagrafica(AnagraficaDto anagrafica){
+    public AnagraficaResponse createAnagrafica(AnagraficaDto anagrafica){
         mapper = new ModelMapper();
         Anagrafica anag = mapper.map(anagrafica, Anagrafica.class);
-        return anagraficaRepository.save(anag);
+        Anagrafica a = anagraficaRepository.save(anag);
+        return mapper.map(a, AnagraficaResponse.class);
     }
 
     @Override
-    public Anagrafica updateAnagrafica(AnagraficaDto anagrafica) {
-        mapper = new ModelMapper();
-        Anagrafica anag = mapper.map(anagrafica, Anagrafica.class);
-        Optional<Anagrafica> optionalAnagrafica = anagraficaRepository.findById(anag.getId());
+    public AnagraficaResponse updateAnagrafica(AnagraficaDto anagrafica) {
+
+        Optional<Anagrafica> optionalAnagrafica = anagraficaRepository.findById(anagrafica.getId());
         if (optionalAnagrafica.isPresent()){
-            Anagrafica anagrafica1 = optionalAnagrafica.get();
-            anagrafica1.setAbi(optionalAnagrafica.get().getAbi());
-            anagrafica1.setCab(optionalAnagrafica.get().getCab());
-            anagrafica1.setBanca(optionalAnagrafica.get().getBanca());
-            anagrafica1.setEmail(optionalAnagrafica.get().getEmail());
-            anagrafica1.setCodiceAteco(optionalAnagrafica.get().getCodiceAteco());
-            anagrafica1.setCodiceFiscale(optionalAnagrafica.get().getCodiceFiscale());
-            // TODO: find out the modifiable fields
-            //mapper.map(anagrafica1, );
+            Anagrafica anagrafica1 =optionalAnagrafica.get();
             try {
                 anagraficaRepository.save(anagrafica1);
-                return anagrafica1;
+                return mapper.map(anagrafica1, AnagraficaResponse.class);
             } catch (Exception ex){
                 logger.error(ex.getMessage());
             }
@@ -85,7 +84,9 @@ public class AnagraficaServiceImpl implements AnagraficaService {
     }
 
     @Override
-    public List<Anagrafica> getAll() {
-        return anagraficaRepository.findAll();
+    public List<AnagraficaResponse> getAll() {
+        List<Anagrafica> al = anagraficaRepository.findAll();
+        List<AnagraficaResponse> ar = al.stream().map(a -> mapper.map(a, AnagraficaResponse.class)).toList();
+        return ar;
     }
 }

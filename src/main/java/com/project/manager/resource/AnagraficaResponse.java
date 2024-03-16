@@ -1,8 +1,10 @@
 package com.project.manager.resource;
 
 import com.project.manager.entity.*;
+import jakarta.persistence.Column;
 ;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class AnagraficaResponse {
@@ -30,6 +32,7 @@ public class AnagraficaResponse {
     private List<OffertaSmaltimento> offertaSmaltimentoList;
 
     private List<Attachment> attachmentList;
+    private LocalDateTime dataInserimento;
 
     public String getCodiceFiscale() {
         return codiceFiscale;
@@ -191,9 +194,17 @@ public class AnagraficaResponse {
         this.attachmentList = attachmentList;
     }
 
+    public LocalDateTime getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento(LocalDateTime dataInserimento) {
+        this.dataInserimento = dataInserimento;
+    }
+
     @Override
     public String toString() {
-        return "anagraficaResponse{" +
+        return "AnagraficaResponse{" +
                 "codiceFiscale='" + codiceFiscale + '\'' +
                 ", partitaIva='" + partitaIva + '\'' +
                 ", ragioneSociale='" + ragioneSociale + '\'' +
@@ -214,6 +225,7 @@ public class AnagraficaResponse {
                 ", offertaSolidoList=" + offertaSolidoList +
                 ", offertaSmaltimentoList=" + offertaSmaltimentoList +
                 ", attachmentList=" + attachmentList +
+                ", dataInserimento=" + dataInserimento +
                 '}';
     }
 }

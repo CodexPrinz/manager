@@ -10,26 +10,19 @@ import java.util.Date;
 public class OffertaAnalisiDto {
 
     private Long id;
-    @JsonProperty(value = "ID_ANAGRAFICA", required = true)
+    @JsonProperty(required = true)
     @NotNull
     private Anagrafica idAnag;
-    @JsonProperty(value = "CODICE_FISCALE", required = true)
+    @JsonProperty(required = true)
     private String codiceFiscale;
-    @JsonProperty("PARTITA_IVA")
     private String partitaIva;
-    @JsonProperty("CODICE_EER_CER")
     private String codiceEER;
-    @JsonProperty("DESCRIZIONE_RIFIUTI")
     private String descrizioneRifiuto;
-    @JsonProperty("VALIDITA_OFFERTA")
     private LocalDate validitaOfferta;
-    @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
-    @JsonProperty("ANALISI_DI_CLASSIFCAZIONE")
     private String analisiDiClassificazione;
-    @JsonProperty(value = "DATA_FIRMA", required = true)
+    @JsonProperty(required = true)
     private Date dataFirma;
-    @JsonProperty("FIRMA_DIGITALE")
     private String firmaDigitale;
 
     public OffertaAnalisiDto() {

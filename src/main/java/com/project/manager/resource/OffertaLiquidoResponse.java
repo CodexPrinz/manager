@@ -3,6 +3,7 @@ package com.project.manager.resource;
 import com.project.manager.entity.Anagrafica;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class OffertaLiquidoResponse  {
 
@@ -12,7 +13,7 @@ public class OffertaLiquidoResponse  {
     private String partitaIva;
     private String codiceEER;
     private String descrizioneRifiuto;
-
+    private LocalDateTime dataInserimento;
     private String trasportoConMotriceCisterna;
     private String trasportoConAutotrenoBilico;
     private String extraSostaDopoLaPrimaOraDiCarico;
@@ -28,6 +29,14 @@ public class OffertaLiquidoResponse  {
     private String firmaDigitale;
 
     public OffertaLiquidoResponse() {
+    }
+
+    public LocalDateTime getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento(LocalDateTime dataInserimento) {
+        this.dataInserimento = dataInserimento;
     }
 
     public Anagrafica getIdAnag() {
@@ -182,6 +191,7 @@ public class OffertaLiquidoResponse  {
                 ", partitaIva='" + partitaIva + '\'' +
                 ", codiceEER='" + codiceEER + '\'' +
                 ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", dataInserimento=" + dataInserimento +
                 ", trasportoConMotriceCisterna='" + trasportoConMotriceCisterna + '\'' +
                 ", trasportoConAutotrenoBilico='" + trasportoConAutotrenoBilico + '\'' +
                 ", extraSostaDopoLaPrimaOraDiCarico='" + extraSostaDopoLaPrimaOraDiCarico + '\'' +

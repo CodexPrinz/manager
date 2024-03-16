@@ -3,6 +3,7 @@ package com.project.manager.resource;
 import com.project.manager.entity.Anagrafica;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class OffertaAnalisiResponse{
 
@@ -19,8 +20,34 @@ public class OffertaAnalisiResponse{
     private String analisiDiClassificazione;
     private LocalDate dataFirma;
     private String firmaDigitale;
+    private LocalDateTime dataInserimento;
 
     public OffertaAnalisiResponse() {
+    }
+
+    @Override
+    public String toString() {
+        return "OffertaAnalisiResponse{" +
+                "idAnag=" + idAnag +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", partitaIva='" + partitaIva + '\'' +
+                ", codiceEER='" + codiceEER + '\'' +
+                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
+                ", validitaOfferta=" + validitaOfferta +
+                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
+                ", analisiDiClassificazione='" + analisiDiClassificazione + '\'' +
+                ", dataFirma=" + dataFirma +
+                ", firmaDigitale='" + firmaDigitale + '\'' +
+                ", dataInserimento=" + dataInserimento +
+                '}';
+    }
+
+    public LocalDateTime getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento(LocalDateTime dataInserimento) {
+        this.dataInserimento = dataInserimento;
     }
 
     public Anagrafica getIdAnag() {
@@ -103,19 +130,4 @@ public class OffertaAnalisiResponse{
         this.firmaDigitale = firmaDigitale;
     }
 
-    @Override
-    public String toString() {
-        return "OffertaAnalisiResponse{" +
-                "idAnag=" + idAnag +
-                ", codiceFiscale='" + codiceFiscale + '\'' +
-                ", partitaIva='" + partitaIva + '\'' +
-                ", codiceEER='" + codiceEER + '\'' +
-                ", descrizioneRifiuto='" + descrizioneRifiuto + '\'' +
-                ", validitaOfferta=" + validitaOfferta +
-                ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
-                ", analisiDiClassificazione='" + analisiDiClassificazione + '\'' +
-                ", dataFirma=" + dataFirma +
-                ", firmaDigitale='" + firmaDigitale + '\'' +
-                '}';
-    }
 }

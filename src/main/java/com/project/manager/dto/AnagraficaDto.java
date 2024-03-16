@@ -11,42 +11,34 @@ import java.util.Date;
 
 
 public class AnagraficaDto {
-    @Column(name = "ID")
+
     private Long id;
-    @JsonProperty(value = "CODICE_FISCALE", required = true)
+    @JsonProperty(required = true)
     private String codiceFiscale;
-    @JsonProperty("PARTITA_IVA")
     private String partitaIva;
-    @JsonProperty("RAGIONE_SOCIALE")
     private String ragioneSociale;
-    @JsonProperty("SEDE_LEGALE")
     private String sedeLegale;
-    @JsonProperty(value = "TELEFONO", required = true)
+    @JsonProperty(required = true)
     @NotBlank(message = "Manco il numero telefono")
     private Integer telefone;
-    @JsonProperty(value = "PERSONA_DI_RIFERIMENTO", required = true)
+    @JsonProperty(required = true)
     private String perosnaDiRiferimento;
-    @JsonProperty(value = "EMAIL", required = true)
+    @JsonProperty(required = true)
     @Email
     @NotBlank(message = "Manca l'indirizzo mail")
     private String email;
-    @JsonProperty("INDIRIZZO_PEC")
+
     @Email
     private String indirizzoPec;
-    @JsonProperty(value = "CODICE_UNIVOCO", required = true)
+    @JsonProperty(required = true)
     @NotBlank
     private String codiceUnivoco;
-    @JsonProperty("CODICE_ATECO")
+
     private String codiceAteco;
-    @JsonProperty("MODALIATA_DI_PAGAMENTO")
     private String modalitaDiPagamento;
-    @JsonProperty("SCADENZA")
     private LocalDate scadenza;
-    @JsonProperty("BANCA")
     private String banca;
-    @JsonProperty("ABI")
     private Integer abi;
-    @JsonProperty("CAB")
     private Integer cab;
 
     public AnagraficaDto() {

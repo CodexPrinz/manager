@@ -8,31 +8,18 @@ import java.util.Date;
 
 public class OffertaSolidoDto {
     private Long id;
-    @JsonProperty("ID_ANAGRAFICA")
     private Anagrafica idAnag;
-    @JsonProperty("CODICE_FISCALE")
     private String codiceFiscale;
-    @JsonProperty("PARTITA_IVA")
     private String partitaIva;
-    @JsonProperty("CODICE_EER_CER")
     private String codiceEER;
-    @JsonProperty("DESCRIZIONE_RIFIUTI")
     private String descrizioneRifiuto;
-    @JsonProperty("EXTRA_SOSTA_DOPO_PRIMA_ORA_CARICO")
     private String extraSostaDopoLaPrimaOraDiCarico;
-    @JsonProperty("QUOATA_MINIMA_FATTURABILE_FORMULARIO")
     private String quotaMinimaFatturabileFormulario;
-    @JsonProperty("COMPILAZIONE_GESTIONE_FORMULARIO")
     private String compilazioneGestioneFormulario;
-    @JsonProperty("VALIDITA_OFFERTA")
     private LocalDate validitaOfferta;
-    @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
-    @JsonProperty("ANALISI_DI_OMOLOGA")
     private String analisiDiOmologa;
-    @JsonProperty("DATA_FIRMA")
     private LocalDate dataFirma;
-    @JsonProperty("FIRMA_DIGITALE")
     private String firmaDigitale;
 
     public OffertaSolidoDto() {

@@ -9,43 +9,27 @@ import java.util.Date;
 
 public class OffertaLiquidoDto {
     private Long id;
-    @JsonProperty(value = "ID_ANAGRAFICA", required = true)
+    @JsonProperty(required = true)
     @NotNull
     private Anagrafica idAnag;
-    @JsonProperty(value = "CODICE_FISCALE", required = true)
+    @JsonProperty( required = true)
     private String codiceFiscale;
-    @JsonProperty("PARTITA_IVA")
     private String partitaIva;
-    @JsonProperty("CODICE_EER_CER")
     private String codiceEER;
-    @JsonProperty("DESCRIZIONE_RIFIUTI")
     private String descrizioneRifiuto;
-
-    @JsonProperty("TRASPORTO_CON_MOTRICE_CISTERNA")
     private String trasportoConMotriceCisterna;
-    @JsonProperty("TRASPORTO_CON_AUTOTRENO_BILICO")
     private String trasportoConAutotrenoBilico;
-    @JsonProperty("EXTRA_SOSTA_DOPO_PRIMA_ORA_CARICO")
     private String extraSostaDopoLaPrimaOraDiCarico;
-    @JsonProperty("UTILIZZO_CANAL_JET")
     private String utilizzoCanalJet;
-    @JsonProperty("IMPIEGO_SECONDO_OPERATORE")
     private String impiegoSecondoOperatore;
-    @JsonProperty("QUOATA_MINIMA_FATTURABILE")
     private String quotaMinimaFatturabile;
-    @JsonProperty("COMPILAZIONE_GESTIONE_FORMULARIO")
     private String compilazioneGestioneFormulario;
-    @JsonProperty("ANALISI_DI_OMOLOGO")
     private String analisiDiOmologo;
-    @JsonProperty("VALIDITA_OFFERTA")
     private LocalDate validitaOfferta;
-    @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
-    @JsonProperty("ANALISI_DI_OMOLOGA")
     private String analisiDiOmologa;
-    @JsonProperty(value = "DATA_FIRMA", required = true)
+    @JsonProperty(required = true)
     private LocalDate dataFirma;
-    @JsonProperty("FIRMA_DIGITALE")
     private String firmaDigitale;
 
     public OffertaLiquidoDto() {

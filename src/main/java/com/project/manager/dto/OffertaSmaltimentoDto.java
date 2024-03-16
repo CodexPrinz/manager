@@ -7,37 +7,21 @@ import java.util.Date;
 
 public class OffertaSmaltimentoDto {
     private Long id;
-    @JsonProperty("ID_ANAGRAFICA")
     private Anagrafica idAnag;
-    @JsonProperty("CODICE_FISCALE")
     private String codiceFiscale;
-    @JsonProperty("DATA_INSERIMENTO")
     private LocalDate dataInserimento;
-    @JsonProperty("PARTITA_IVA")
     private String partitaIva;
-    @JsonProperty("CODICE_EER_CER")
     private String codiceEER;
-    @JsonProperty("DESCRIZIONE_RIFIUTI")
     private String descrizioneRifiuto;
-    @JsonProperty("SMALTIMENTO")
     private String smaltimento;
-    @JsonProperty("TRASPORTO_CON_MOTRICE")
     private String trasportoConMotrice;
-    @JsonProperty("TRASPORTO_CON_AUTOTRENO_BILICO")
     private String trasportoConAutotrenoBilico;
-    @JsonProperty("EXTRA_SOSTA_DOPO_PRIMA_ORA_CARICO")
     private String extraSostaDopoLaPrimaOraDiCarico;
-    @JsonProperty("QUOATA_MINIMA_FATTURABILE_FORMULARIO")
     private String quotaMinimaFatturabileFormulario;
-    @JsonProperty("COMPILAZIONE_GESTIONE_FORMULARIO")
     private String compilazioneGestioneFormulario;
-    @JsonProperty("ANALISI_DI_CLASSIFICAZIONE")
     private String analisiDiClassificazione;
-    @JsonProperty("VALIDITA_OFFERTA")
     private LocalDate validitaOfferta;
-    @JsonProperty("CONDIZIONI_DI_PAGAMENTO")
     private String condizioniDiPagamento;
-    @JsonProperty("DATA_FIRMA")
     private LocalDate dataFirma;
 
     public Long getId() {

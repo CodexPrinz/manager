@@ -5,6 +5,7 @@ import com.project.manager.entity.Anagrafica;
 import jakarta.persistence.Column;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class OffertaSolidoResponse  {
     private Anagrafica idAnag;
@@ -18,10 +19,16 @@ public class OffertaSolidoResponse  {
     private LocalDate validitaOfferta;
     private String condizioniDiPagamento;
     private String analisiDiOmologa;
-    @Column(name = "DATA_FIRMA")
     private LocalDate dataFirma;
+    private LocalDateTime dataInserimento;
 
+    public LocalDateTime getDataInserimento() {
+        return dataInserimento;
+    }
 
+    public void setDataInserimento(LocalDateTime dataInserimento) {
+        this.dataInserimento = dataInserimento;
+    }
 
     public OffertaSolidoResponse() {
     }
@@ -139,6 +146,7 @@ public class OffertaSolidoResponse  {
                 ", condizioniDiPagamento='" + condizioniDiPagamento + '\'' +
                 ", analisiDiOmologa='" + analisiDiOmologa + '\'' +
                 ", dataFirma=" + dataFirma +
+                ", dataInserimento=" + dataInserimento +
                 '}';
     }
 }
