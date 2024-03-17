@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping(path = "/api/v1")
@@ -42,7 +43,7 @@ public class FileUploadController {
             dto.setFileContent(file.getBytes());
             dto.setFileType("");
 
-            //TODO: test
+            //TODO: test, also what are the file types acceptable
             String fileDownLoadUrl= ServletUriComponentsBuilder
                     .fromCurrentContextPath()
                     .path(UPLOAD_DIR)
@@ -51,23 +52,25 @@ public class FileUploadController {
 
             dto.setDownloadUrl(fileDownLoadUrl);
 
-//            Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
-//            Files.write(path, fileContent);
-
 
             // TODO: attachmentService.saveAttachment(dto);
             String location = UPLOAD_DIR + file.getOriginalFilename();
-            try (OutputStream out = new FileOutputStream(location)) {
-                logger.info("File location {}", location);
-               byte[] buffer = new byte[1024];
-               int bytesRead;
-
-               while ((bytesRead = file.getInputStream().read(buffer)) != -1){
-                   out.write(buffer, 0, bytesRead);
-               }
-            }  catch (IOException e) {
-                throw new RuntimeException(e);
+            File f = new File(location);
+            if (f.exists()){
+                location+=" "+ LocalDateTime.now();
             }
+            boolean bool = f.createNewFile();
+//            if (bool){
+                try (FileOutputStream out = new FileOutputStream(f)) {
+                    out.write(file.getBytes());
+                    out.close();
+                    logger.info("File location {}", location);
+
+                    attachmentService.saveAttachment(dto);
+                }  catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+ //           }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
