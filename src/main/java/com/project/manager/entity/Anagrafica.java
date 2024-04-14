@@ -72,6 +72,20 @@ public class Anagrafica implements Serializable {
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "idAnag")
     @Column(name = "Attachment")
     private List<Attachment> attachmentList;
+    @Column(name = "NOME")
+    private String nome;
+    @Column(name = "COGNOME")
+    private String cognome;
+    @Column(name = "CODICE")
+    private String codice;
+    @Column(name = "INDIRIZZO")
+    private String indirizzo;
+    @Column(name = "CAP")
+    private int cap;
+    @Column(name = "COMUNE")
+    private String comune;
+    @Column(name = "PROVINCIA")
+    private String provincia;
 
     public Anagrafica() {
     }
